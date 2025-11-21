@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import { HiOutlineArrowDown } from "react-icons/hi";
+import Navbar from "@/component/scrollNavbar";
 export default function Home() {
   return (
     <>
@@ -13,17 +14,36 @@ export default function Home() {
     <div className="flex w-10 h-10 border border-black absolute left-[50%] top-[92%] -translate-1/2 cursor-pointer justify-center rounded-full bg-gray-100 opacity-30 hover:opacity-50"><HiOutlineArrowDown className="h-7 w-7 self-center"/></div>
     </div>
   
-    <div className="flex h-[80] max-w-7xl static w-full mx-auto">
-      <div className="flex gap-10 border-b border-[#5D9787]">
-      <div className="text-3xl self-center font-bold">What you can do</div>
-      <ul className="flex justify-between items-center gap-8">
-        <li className="flex text-xl border-b-2 border-transparent hover:border-b-2 hover:border-[#5D9787] h-full items-center w-[163px] justify-center"><a className="">Become organizer</a></li>
-        <li className="flex text-xl border-b-2 border-[#5D9787] h-full items-center w-[163px] justify-center"><a className="">Join activity</a></li>
-        <li className="flex text-xl border-b-2 border-[#5D9787] h-full items-center w-[163px] justify-center"><a className="">Shop</a></li>
-      </ul>
+    <Navbar/>
+    <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="organizer">
+      <Image alt="teamleader" src="/team leader.png" fill className="object-cover" priority></Image>
+      <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Become organizer and publish your activity</h1></div>
+      <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
+      <button className="text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as an organizer</button>
+
+       <button className="text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+       </div>
     </div>
+    <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="join">
+      <Image alt="participants" src="/paticipants.png" fill className="object-cover" priority></Image>
+      <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Become Particpants and join the activity</h1></div>
+      <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
+      <button className="text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as participants</button>
+
+       <button className="text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+       </div>
     </div>
-    <div className="h-[100px] mt-10"></div>
+    <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="shop" >
+      <Image alt="shop" src="/shop.png" fill className="object-cover" priority></Image>
+      <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Check items you need</h1></div>
+      <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
+      <button className="text-2xl text-white px-4 py-2 border border-[#FF3B30] rounded-3xl bg-[#FF3B30] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Shop now</button>
+       </div>
+    </div>
+    <div className="h-20"></div>
+
+    
+    
     </>
   );
 }
