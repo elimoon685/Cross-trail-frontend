@@ -19,7 +19,7 @@ const FooterCol = ({ id, title, items }: FooterCol) => {
         </span>
         
       </label>
-      <span className="lg:hidden text-lg absolute left-[100%] top-[0] transition-transform duration-300 peer-checked:rotate-180">▾</span>
+      <span className="lg:hidden text-lg absolute left-full top-0 transition-transform duration-300 peer-checked:rotate-180">▾</span>
       <ul className="text-white text-[18px]
                           max-h-0 opacity-0 overflow-hidden
                           peer-checked:max-h-40 peer-checked:opacity-100
