@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const HeaderFooterWrapper=({children}:Readonly<{children: React.ReactNode}>)=>{
 
     const pathName=usePathname();
-    const hiddenRouter=["/login-admin", "/login-participants", "/login-organizer"]
+    const hiddenRouter=["/login-admin", "/login-participants", "/login-organizer", "/register-organizer"]
     const hiddenLayout=hiddenRouter.includes(pathName);
 
     return (
