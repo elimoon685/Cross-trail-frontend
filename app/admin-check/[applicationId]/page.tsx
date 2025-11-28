@@ -11,8 +11,8 @@ const res=AdminApi.getTargetedApplication()
 const ViewApplication=async ({ params }:ViewApplicationPageProps)=>{
     const { applicationId} = await params; 
     console.log(applicationId)
-    const initialData=await getTargetedApplicationData(applicationId)
-
+    //const initialData=await getTargetedApplicationData(applicationId)
+    const initialData:any=1
     return (
     <div className="flex flex-col min-h-[calc(100vh-60px)] bg-[#DCEFF2] justify-center items-center">
   <AdminCheckBoard initialData={initialData}/>
