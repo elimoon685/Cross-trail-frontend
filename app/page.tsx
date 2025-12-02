@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { HiOutlineArrowDown } from "react-icons/hi";
 import Navbar from "@/component/scrollNavbar";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -37,7 +38,7 @@ export default function Home() {
       <Image alt="shop" src="/shop.png" fill className="object-cover" priority></Image>
       <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Check items you need</h1></div>
       <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
-      <button className="text-2xl text-white px-4 py-2 border border-[#FF3B30] rounded-3xl bg-[#FF3B30] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Shop now</button>
+      <Link href="/shop" className="text-2xl text-white px-4 py-2 border border-[#FF3B30] rounded-3xl bg-[#FF3B30] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Shop now</Link>
        </div>
     </div>
     <div className="h-20"></div>
