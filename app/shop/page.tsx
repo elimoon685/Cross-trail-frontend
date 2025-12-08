@@ -1,4 +1,4 @@
-import ShopHeader from "@/component/shopHeader"
+
 import SiderHover from "@/component/shop/sideHover";
 import { menuData } from "@/data/hoverCol";
 import ShiftImg from "@/component/shop/shiftImg";
@@ -9,9 +9,8 @@ const ShopPage=()=>{
 
     return (
         <>
-        <ShopHeader/>
-        <div className="flex mx-auto max-w-7xl w-full h-100 bg-[#DCEFF2]">
-        <div className="flex flex-col bg-black">
+        <div className="flex mx-auto max-w-7xl w-full h-100 mt-10 flex-wrap lg:flex-nowrap">
+        <div className="hidden bg-black lg:flex lg:flex-col">
             {menuData.map((ca, idx)=>
          <SiderHover key={idx} data={ca}/>
             )

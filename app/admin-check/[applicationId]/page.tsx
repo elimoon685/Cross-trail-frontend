@@ -6,7 +6,7 @@ type ViewApplicationPageProps = {
       }>;
   };
 async function getTargetedApplicationData(id:string){
-const res=AdminApi.getTargetedApplication()
+//const res=AdminApi.getTargetedApplication()
 }
 const ViewApplication=async ({ params }:ViewApplicationPageProps)=>{
     const { applicationId} = await params; 

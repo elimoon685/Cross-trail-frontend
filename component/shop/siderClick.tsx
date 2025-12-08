@@ -1,25 +1,35 @@
 
-import { Props } from "@/interface/menuData";
+import { RootCategory } from "@/interface/menuData";
 import ClickCol from "./ClickCol";
-const SiderClick = ({ data }: Props) => {
+type SiderClickProps = {
+  data: RootCategory;
+  idx: number;   // 从 map 里传进来
+};
+
+const SiderClick = ({ data, idx }: SiderClickProps) => {
 
   const [categoryName, items] = Object.entries(data)[0];
+  const id = `main-${categoryName}-${idx}`;
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
+      
+      
       <input
         type="checkbox"
-        id={categoryName}
+        id={id}
         className="peer hidden"
       />
-      <label htmlFor={categoryName}>
-        <span>{categoryName}</span>
+      <label htmlFor={id}>
+        <span className="text-2xl font-bold ml-3 ">{categoryName}</span>
       </label>
-      <span>▾</span>
+      <span className="absolute left-[90%] top-[0.5%] transition-transform duration-300 peer-checked:rotate-180 ">▾</span>
+      <div className="opacity-0 peer-checked:opacity-100 max-h-0 peer-checked:max-h-screen overflow-hidden transition-all duration-500 mb-5">
      {
-      items.map((item, index)=>(
-       <ClickCol key={index} data={item} />
+      items.map((item, subIndex)=>(
+       <ClickCol key={subIndex} data={item} parentKey={categoryName} index={subIndex}/>
       ))
      }
+     </div>
 
 
     </div>
