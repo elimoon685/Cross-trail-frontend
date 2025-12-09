@@ -48,8 +48,8 @@ export const fliterScope:MocData={
 
 ],
 "Price":[
-    { "value": 1, "name": "720", "count": 1},
-    { "value": 2, "name": "14",   "count": 1},
+    { "value": 1, "name": "14", "count": 1},
+    { "value": 2, "name": "720",   "count": 1},
 
 ],
 "Color":[

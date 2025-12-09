@@ -10,14 +10,14 @@ const ShopFliter = ({ data }: Props) => {
 
 
     return (
-        <div className="bg-[#DCEFF2] w-60 h-screen ml-10 mt-10">
+        <div className="bg-[#DCEFF2] w-70 ml-10 mt-10 pt-5 px-3">
 
             {
                 Object.entries(data).map(([facetkey, options]) => {
 
                     if (facetkey === "Price") {
                         return (
-                        <PriceFacet key={facetkey}/>
+                        <PriceFacet key={facetkey} facetkey={facetkey} options={options}/>
                     );
                     }
                     if(facetkey==="Color"){

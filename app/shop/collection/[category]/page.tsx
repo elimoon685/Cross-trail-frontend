@@ -1,4 +1,3 @@
-import { ShopApi } from "@/api/shop"
 import ShopFliter from "@/component/siderComponent/shopFliter";
 import ProductLists from "@/component/shop/productLists";
 import { fliterScope } from "@/data/productsFliter";
