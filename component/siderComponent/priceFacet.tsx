@@ -6,6 +6,7 @@ type Props = {
 
   facetkey: string,
   options: FacetOption[],
+  onChange:(key:string, value:string)=>void,
 
 }
 const PriceFacet = ({ facetkey, options }: Props) => {
@@ -23,63 +24,107 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
 });
   const urlMin = Number(searchParams.get("priceMin") ?? DEFAULT_MIN);
   const urlMax = Number(searchParams.get("priceMax") ?? DEFAULT_MAX);
-
+  
   const [min, setMin]=useState<number>(urlMin);
   const [max, setMax]=useState<number>(urlMax);
 
+  const [activeThumb, setActiveThumb] = useState<'min' | 'max' | null>(null);
+
+  const [inputMin, setInputMin]=useState<string>(String(urlMin));
+  const [inputMax, setInputMax]=useState<string>(String(urlMax));
+
+  const applyToUrl = (nextMin: number, nextMax: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (nextMin <= DEFAULT_MIN && nextMax >= DEFAULT_MAX) {
+      params.delete("priceMin");
+      params.delete("priceMax");
+    } else {
+      params.set("priceMin", String(nextMin));
+      params.set("priceMax", String(nextMax));
+    }
+
+    router.replace(
+      `${pathname}?${params.toString()}`,
+      { scroll: false }
+    );
+  };
  const handleMaxChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
   const value = Number(e.target.value);
   const nextMax = Math.max(value, min); // 不超过右边
   setMax(nextMax);
+  setInputMax(String(nextMax));
  }
  const handleMinChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
   
   const value = Number(e.target.value);
-  const nextMin = Math.min(value, max); // 不超过右边
+  const nextMin = Math.min(value, max);
   setMin(nextMin);
+  setInputMin(String(nextMin));
+ }
+
+ const handleMinBlur=(e: React.FocusEvent<HTMLInputElement>)=>{
+  const raw = Number(inputMin);
+  if (Number.isNaN(raw)) {
+    setInputMin(String(min));
+    return;
+  }
+  const fixed = Math.min(Math.max(raw, DEFAULT_MIN), max);
+  setMin(fixed);                  
+  setInputMin(String(fixed)); 
+  applyToUrl(fixed, max);
+
+
+ }
+ const handleMaxBlur=(e: React.FocusEvent<HTMLInputElement>)=>{
+
+  const raw = Number(inputMax);
+  if (Number.isNaN(raw)) {
+    setInputMin(String(max));
+    return;
+  }
+  const fixed = Math.max(Math.min(raw, DEFAULT_MAX), min);
+  setMax(fixed);                  
+  setInputMax(String(fixed)); 
+  applyToUrl(min, fixed);
+
+
  }
  const commitSlider=()=>{
-  const params = new URLSearchParams(searchParams.toString());
-  params.set("priceMin", String(min));
-  params.set("priceMax", String(max));
-  router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  applyToUrl(min, max);
 
  }
 
   return (
     <div className="px-2 flex flex-col mb-5 pb-5 gap-5 border-b border-black">
        <div className=""><span className="text-xl font-bold">{facetkey}</span></div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 self-center">
       <input 
-      className="border-2 border-[#5D9787] w-25 rounded-sm"
-      
-      onChange={()=>{}}
+      className="border-2 border-[#5D9787] w-25 rounded-sm px-2 py-1 outline-[#5dbaa0]"
+      value={inputMin}
+     onChange={(e)=>setInputMin(e.target.value)}
+      onBlur={handleMinBlur}
       />
       <span>-</span>
-      <input className="border-2 border-[#5D9787] w-25 rounded-sm"/>
+      <input 
+      value={inputMax}
+      onChange={(e)=>setInputMax(e.target.value )}
+      onBlur={handleMaxBlur}
+      className="border-2 border-[#5D9787] w-25 rounded-sm px-2 py-1 outline-[#5dbaa0]"/>
 
       </div>
       <div className="relative mt-2">
-      <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 bg-gray-200 rounded" />
+      <div className="absolute left-0 right-0 top-[27%] -translate-y-1/2 h-1 bg-gray-200 rounded" />
 
       <div
-          className="absolute top-1/2 -translate-y-1/2 h-1 bg-black rounded"
+          className="absolute top-[27%] -translate-y-1/2 h-1 bg-black rounded"
           style={{
             left: `${((min - DEFAULT_MIN) / (DEFAULT_MAX - DEFAULT_MIN)) * 100}%`,
             right: `${100 - ((max - DEFAULT_MIN) / (DEFAULT_MAX - DEFAULT_MIN)) * 100}%`,
           }}
         />
 
-  <input
-    type="range"
-    min={DEFAULT_MIN}
-    max={DEFAULT_MAX}
-    value={min}
-    onChange={handleMinChange}
-    onMouseUp={commitSlider}
-    onTouchEnd={commitSlider}
-    className="w-full bg-transparent appearance-none relative"
-  />
+  
 
   <input
     type="range"
@@ -89,9 +134,22 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
     onChange={handleMaxChange}
     onMouseUp={commitSlider}
     onTouchEnd={commitSlider}
-    className="w-full bg-transparent appearance-none relative"
+    onMouseDown={() => setActiveThumb('max')}
+    className={`double-range absolute right-0 left-0 w-full bg-transparent appearance-none ${activeThumb === 'max' ? "z-20" : "z-10"} ` }
   />
-  {ticks.map((t) => (
+
+<input
+    type="range"
+    min={DEFAULT_MIN}
+    max={DEFAULT_MAX}
+    value={min}
+    onChange={handleMinChange}
+    onMouseUp={commitSlider}
+    onTouchEnd={commitSlider}
+    onMouseDown={() => setActiveThumb('min')}
+    className={`double-range absolute right-0 left-0 w-full bg-transparent appearance-none  ${activeThumb === 'min' ? "z-20" : "z-10"}`}
+  />
+  {/* {ticks.map((t) => (
     <div
       key={t}
       className="absolute top-full -translate-y-1/2 w-px h-3 bg-black"
@@ -100,9 +158,9 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
         transform: "translate(-50%, -50%)",
       }}
     />
-  ))}
+  ))} */}
 
-<div className="mt-4 flex justify-between text-xs">
+<div className="mt-5 flex justify-between text-xs">
         {ticks.map((t) => (
           <span key={t}>{t}</span>
         ))}

@@ -1,13 +1,15 @@
 'use client'
 import { FacetOption } from "@/interface/fliterResponse";
 import { useSearchParams, usePathname, useRouter} from "next/navigation"
+
 type Props = {
 
   facetkey: string,
   options: FacetOption[],
+  onChange:(key:string, value:string)=>void
 
 }
-const NormalFacet = ({ facetkey, options }: Props) => {
+const NormalFacet = ({ facetkey, options, onChange}: Props) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -20,8 +22,10 @@ const NormalFacet = ({ facetkey, options }: Props) => {
     const next=[...selected].filter(v=>v!==value);
     params.delete(facetkey);
     next.forEach(v => params.append(facetkey, v));
+    onChange(facetkey, value);
    }else {
     params.append(facetkey, value);
+    onChange(facetkey, value);
 
   }
   router.replace(`${pathname}?${params.toString()}`, { scroll: false });
@@ -33,7 +37,7 @@ const NormalFacet = ({ facetkey, options }: Props) => {
       <div className=""><span className="text-xl font-bold">{facetkey}</span></div>
       <div className="max-h-70 overflow-y-auto thin-scrollbar">
         {options.map((opt) => (
-          <label key={opt.value} className=" flex items-center gap-3 mb-2">
+          <label key={opt.value} className="flex items-center gap-3 mb-2">
             <input
               type="checkbox"
               checked={selected.has(opt.name)}

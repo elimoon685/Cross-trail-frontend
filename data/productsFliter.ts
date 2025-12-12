@@ -59,7 +59,9 @@ export const fliterScope:MocData={
     { "value": 4, "name": "#FFFFFF",   "count": 0  },
     { "value": 5, "name": "8B4513", "count": 0 },
     { "value": 6, "name": "#000000",   "count": 0  },
-    { "value": 7, "name": "#8E44AD",   "count": 0  }
+    { "value": 7, "name": "#8E44AD",   "count": 0  },
+    { "value": 8, "name": "#5D4037",   "count": 0  },
+    { "value": 9, "name": "#F97316",   "count": 0  }
 ],
 
 "Reviews":[
