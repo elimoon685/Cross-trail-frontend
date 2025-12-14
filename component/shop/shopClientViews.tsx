@@ -10,16 +10,56 @@ type SelectedFacets = {
   [key: string]: string | string[];
 };
   
-
 const ShopClientView = ({ data }: Props) => {
 const [openFilter, setOpenFilter]=useState<boolean>(false)
 
 const [selectedQuery, setSelectedQuery]=useState<SelectedFacets>({});
 
-
 const handleDesktopFacetChange =(key:string, value:string)=>{
-console.log("key", key, "value", value)
-setSelectedQuery(prev=>({...prev, [key]:value}))
+
+  setSelectedQuery(prev=> {
+
+    if (value === "") {
+      const { [key]: _, ...rest } = prev;
+      return rest;
+    }
+    if (key === "Price") {
+      return { ...prev, [key]: [value] };
+    }
+
+    const prevValue=prev[key];
+    if(!prevValue) return {...prev, [key]:[value]};
+
+    if(Array.isArray(prevValue)){
+
+      if(prevValue.includes(value)){
+
+        const nextArr =prevValue.filter(v=>v!==value)
+
+        if(nextArr.length===0){
+
+          const {[key]:_, ...rest}=prev
+
+          return rest
+        }
+
+        return {
+          ...prev, [key]:nextArr
+        }
+      }
+        return {
+        ...prev,
+        [key]: [...prevValue, value],
+      };
+    }
+    return {
+      ...prev,
+      [key]: [prevValue, value],
+    };
+
+    }
+ )
+
 
 }
 const clearAllSelectedFilter=()=>{
@@ -34,7 +74,7 @@ const handleMobileFacetChange =(key:string, value:string)=>{
   return (
 
     <div className="flex gap-5 grow">
-      <ShopFliter data={data} onChange={handleDesktopFacetChange} applyFilter={selectedQuery} variant="desktop"/>
+      <ShopFliter data={data} onChange={handleDesktopFacetChange} applyFilter={selectedQuery} setSelectedQuery={setSelectedQuery} variant="desktop"/>
       <div className="flex flex-col grow mr-20 mt-10">
         <div className="flex justify-between">
          <div className="flex border-black border max-w-[300px] w-full">

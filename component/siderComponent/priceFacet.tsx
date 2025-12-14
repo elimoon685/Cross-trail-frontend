@@ -9,7 +9,7 @@ type Props = {
   onChange:(key:string, value:string)=>void,
 
 }
-const PriceFacet = ({ facetkey, options }: Props) => {
+const PriceFacet = ({ facetkey, options, onChange}: Props) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -22,8 +22,9 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
   const ratio = i / TICK_COUNT; // 0, 0.25, 0.5, 0.75, 1
   return Math.round(DEFAULT_MIN + (DEFAULT_MAX - DEFAULT_MIN) * ratio);
 });
-  const urlMin = Number(searchParams.get("priceMin") ?? DEFAULT_MIN);
-  const urlMax = Number(searchParams.get("priceMax") ?? DEFAULT_MAX);
+
+  const urlMin = Number(searchParams.get("price")?.split(":")[0] ?? DEFAULT_MIN);
+  const urlMax = Number(searchParams.get("price")?.split(":")[1] ?? DEFAULT_MAX);
   
   const [min, setMin]=useState<number>(urlMin);
   const [max, setMax]=useState<number>(urlMax);
@@ -33,28 +34,29 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
   const [inputMin, setInputMin]=useState<string>(String(urlMin));
   const [inputMax, setInputMax]=useState<string>(String(urlMax));
 
-  const applyToUrl = (nextMin: number, nextMax: number) => {
+  const applyToUrl = (rangeValue:string) => {
+    const nextMin=Number(rangeValue.split(":")[0]);
+    const nextMax=Number(rangeValue.split(":")[1]);
     const params = new URLSearchParams(searchParams.toString());
-
     if (nextMin <= DEFAULT_MIN && nextMax >= DEFAULT_MAX) {
-      params.delete("priceMin");
-      params.delete("priceMax");
+      params.delete("price");
+      onChange(facetkey, ''); 
     } else {
-      params.set("priceMin", String(nextMin));
-      params.set("priceMax", String(nextMax));
-    }
-
-    router.replace(
-      `${pathname}?${params.toString()}`,
-      { scroll: false }
-    );
-  };
+      params.set("price", rangeValue);
+      onChange(facetkey, rangeValue)
+  }
+  router.replace(
+    `${pathname}?${params.toString()}`,
+    { scroll: false }
+  );
+}
  const handleMaxChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
   const value = Number(e.target.value);
-  const nextMax = Math.max(value, min); // 不超过右边
+  const nextMax = Math.max(value, min);
   setMax(nextMax);
   setInputMax(String(nextMax));
  }
+
  const handleMinChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
   
   const value = Number(e.target.value);
@@ -72,7 +74,8 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
   const fixed = Math.min(Math.max(raw, DEFAULT_MIN), max);
   setMin(fixed);                  
   setInputMin(String(fixed)); 
-  applyToUrl(fixed, max);
+  const rangeValue:string=fixed +":"+max;
+  applyToUrl(rangeValue);
 
 
  }
@@ -86,12 +89,14 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
   const fixed = Math.max(Math.min(raw, DEFAULT_MAX), min);
   setMax(fixed);                  
   setInputMax(String(fixed)); 
-  applyToUrl(min, fixed);
+  const rangeValue:string=min +":"+fixed;
+  applyToUrl(rangeValue);
 
 
  }
  const commitSlider=()=>{
-  applyToUrl(min, max);
+  const rangeValue:string=min +":"+max;
+  applyToUrl(rangeValue);
 
  }
 
