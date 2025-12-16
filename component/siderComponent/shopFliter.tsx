@@ -6,6 +6,8 @@ import { MocData } from "@/interface/fliterResponse"
 import ReviewFacet from "./ReviewFacet"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 import ShowSelectedFilter from "./showSelectedFilter"
+import parseFilterState from "@/lib/utility/paramToState"
+import { useEffect,memo} from "react"
 type SelectedFacets = { [key: string]: string | string[]; }
 type Props = {
   data: MocData,
@@ -14,22 +16,30 @@ type Props = {
   setSelectedQuery: React.Dispatch<React.SetStateAction<SelectedFacets>>
   variant?: "desktop" | "mobile";
 }
-const ShopFliter = ({ data, applyFilter, onChange, setSelectedQuery }: Props) => {
+const ShopFliter = ({ data, applyFilter, onChange, setSelectedQuery, variant}: Props) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-
+  
+  useEffect(() => {
+    const filterState = parseFilterState(searchParams);
+    setSelectedQuery(filterState);
+  }, [searchParams]);
 
   const removeQueryValue = (facetKey: string, value: string) => {
-
+    
     const params = new URLSearchParams(searchParams.toString());
+    if(facetKey==="Price"){
+      params.delete("Price");
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }else{
     const next = params.getAll(facetKey).filter(v => v !== value);
 
     params.delete(facetKey);
     next.forEach(v => params.append(facetKey, v));
 
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-
+    }
   }
 
   const deleteSelectedFilter = (key: string, value: string) => {
@@ -61,7 +71,13 @@ const ShopFliter = ({ data, applyFilter, onChange, setSelectedQuery }: Props) =>
 
 
   return (
-    <div className="bg-[#DCEFF2] max-w-70 ml-10 mt-30 pt-5 px-3 flex flex-col">
+    <div className={` ${variant==="mobile" ? "bg-white" : "bg-[#DCEFF2]" }  
+    ${variant ==="mobile" ? "max-w-90" :"max-w-70" }
+    ${variant ==="mobile" ? "mt-0" :"mt-30" }
+    ${variant==="mobile" ? "ml-5": "ml-10"}
+    pt-5 
+    px-3 
+   ${variant==="desktop" && "hidden" } md:flex md:flex-col `}>
 
       <ShowSelectedFilter data={applyFilter} 
       onRemove={removeQueryValue} 
@@ -80,12 +96,12 @@ const ShopFliter = ({ data, applyFilter, onChange, setSelectedQuery }: Props) =>
           if (facetkey === "Color") {
 
             return (
-              <ColorFacet key={facetkey} facetkey={facetkey} options={options} />
+              <ColorFacet key={facetkey} facetkey={facetkey} options={options} onChange={onChange}  />
             )
           }
           if (facetkey === "Reviews") {
             return (
-              <ReviewFacet key={facetkey} facetkey={facetkey} options={options} />
+              <ReviewFacet key={facetkey} facetkey={facetkey} options={options} onChange={onChange} />
             )
           }
 
@@ -100,4 +116,4 @@ const ShopFliter = ({ data, applyFilter, onChange, setSelectedQuery }: Props) =>
     </div>
   )
 }
-export default ShopFliter
+export default memo(ShopFliter)

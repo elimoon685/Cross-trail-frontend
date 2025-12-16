@@ -7,11 +7,11 @@ type Props = {
 
     facetkey: string,
     options: FacetOption[],
-  
+    onChange:(key:string, value:string)=>void,
   }
 const arr = Array.from({ length: 5 });
 
-const ReviewFacet=({facetkey, options}:Props)=>{
+const ReviewFacet=({facetkey, options, onChange}:Props)=>{
 
     const searchParams = useSearchParams();
   const router = useRouter();
@@ -24,8 +24,10 @@ const toggleReviews=(value:string)=>{
      const next=[...selected].filter(v=>v!==value);
      params.delete(facetkey);
      next.forEach(v => params.append(facetkey, v));
+     onChange(facetkey, value)
     }else {
      params.append(facetkey, value);
+     onChange(facetkey, value)
  
    }
    router.replace(`${pathname}?${params.toString()}`, { scroll: false });

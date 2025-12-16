@@ -22,7 +22,7 @@ const ClickCol = ({ data, parentKey, index}: Props) => {
         </label>
         <span className="absolute left-[90%] top-[0.5%] transition-transform duration-300 peer-checked:rotate-180">▾</span>
      
-      <div className="flex flex-col opacity-0 peer-checked:opacity-100 max-h-0 peer-checked:max-h-screen overflow-hidden transition-all duration-500 ">
+      <div className="flex flex-col gap-2 mt-3 opacity-0 peer-checked:opacity-100 max-h-0 peer-checked:max-h-screen overflow-hidden transition-all duration-500 ">
      {items.map((item, index)=>(
 
        <span key={index} className="ml-5">{item}</span>

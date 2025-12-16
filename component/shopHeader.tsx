@@ -28,7 +28,7 @@ return (
         
     </div>
     <div className={`fixed top-0 left-0 flex flex-col h-screen w-[400px] bg-white transform transition-transform duration-500 ${openCategory ? "translate-x-0" : "-translate-x-full"} z-999`} >
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-auto">
         <div className="flex mb-10 border-b-2 border-gray-200 justify-end">
          <span className="px-3 py-2"><RxCross2 className="w-7 h-7" onClick={()=>{setOpenCategory(false)}} /></span>
         </div>

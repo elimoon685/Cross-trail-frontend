@@ -6,6 +6,7 @@ export const Color : FacetOption[]=[];
 export const Gender : FacetOption[]=[];
 export const Discount : FacetOption[]=[];
 export const Reviews : FacetOption[]=[];
+export const SortItem:string[]=["Sorted By", "Discount", "Price Descending", "Price Ascending","Name A-Z", "Name Z-A"];
 
 export const fliterScope:MocData={
 "ProductType":[

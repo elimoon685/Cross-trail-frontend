@@ -5,10 +5,11 @@ type Props = {
 
     facetkey: string,
     options: FacetOption[],
+    onChange:(key:string, value:string)=>void
   
   }
 
-const ColorFacet=({facetkey, options}:Props)=>{
+const ColorFacet=({facetkey, options, onChange}:Props)=>{
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -21,8 +22,10 @@ const toggleColor=(value:string)=>{
         const next=[...selected].filter(v=>v!==value);
         params.delete(facetkey);
         next.forEach(v => params.append(facetkey, v));
+        onChange(facetkey, value)
        }else {
         params.append(facetkey, value);
+        onChange(facetkey, value)
     
       }
       router.replace(`${pathname}?${params.toString()}`, { scroll: false });

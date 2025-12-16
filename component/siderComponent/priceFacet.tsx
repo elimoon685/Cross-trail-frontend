@@ -1,7 +1,7 @@
 'use client'
 import { FacetOption } from "@/interface/fliterResponse";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 type Props = {
 
   facetkey: string,
@@ -16,16 +16,27 @@ const PriceFacet = ({ facetkey, options, onChange}: Props) => {
   const DEFAULT_MIN=Number(options[0].name);
   const DEFAULT_MAX=Number(options[1].name);
 
-  const TICK_COUNT = 4; // 中间 3 个 + 2 端 = 5 个数字
+  const TICK_COUNT = 4; 
+
+  useEffect(() => {
+    const price = searchParams.get("Price");
+    const [nextMin, nextMax] = price
+      ? price.split(":").map(Number)
+      : [DEFAULT_MIN, DEFAULT_MAX];
+  
+    setMin(nextMin);
+    setMax(nextMax);
+    setInputMin(String(nextMin));
+    setInputMax(String(nextMax));
+  }, [searchParams, DEFAULT_MIN, DEFAULT_MAX]);
 
 const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
   const ratio = i / TICK_COUNT; // 0, 0.25, 0.5, 0.75, 1
   return Math.round(DEFAULT_MIN + (DEFAULT_MAX - DEFAULT_MIN) * ratio);
 });
 
-  const urlMin = Number(searchParams.get("price")?.split(":")[0] ?? DEFAULT_MIN);
-  const urlMax = Number(searchParams.get("price")?.split(":")[1] ?? DEFAULT_MAX);
-  
+  const urlMin = Number(searchParams.get("Price")?.split(":")[0] ?? DEFAULT_MIN);
+  const urlMax = Number(searchParams.get("Price")?.split(":")[1] ?? DEFAULT_MAX);
   const [min, setMin]=useState<number>(urlMin);
   const [max, setMax]=useState<number>(urlMax);
 
@@ -39,10 +50,10 @@ const ticks = Array.from({ length: TICK_COUNT + 1 }, (_, i) => {
     const nextMax=Number(rangeValue.split(":")[1]);
     const params = new URLSearchParams(searchParams.toString());
     if (nextMin <= DEFAULT_MIN && nextMax >= DEFAULT_MAX) {
-      params.delete("price");
+      params.delete("Price");
       onChange(facetkey, ''); 
     } else {
-      params.set("price", rangeValue);
+      params.set("Price", rangeValue);
       onChange(facetkey, rangeValue)
   }
   router.replace(
