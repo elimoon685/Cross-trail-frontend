@@ -1,19 +1,20 @@
-import ShopFliter from "@/component/siderComponent/shopFliter";
-import ProductLists from "@/component/shop/productLists";
+
 import { fliterScope } from "@/data/productsFliter";
+import Products from "@/data/productsLists";
 import ShopClientView from "@/component/shop/shopClientViews";
 type PageProps = {
     searchParams: { [key: string]: string | string[] | undefined };
   };
   
 const ProductsViews= async ({searchParams}:PageProps)=>{
-
+    console.log("isPromise", searchParams instanceof Promise);
     //const initialData = await ShopApi.getProducts(searchParams);
     return (
 
         <div className="flex">
      
-     <ShopClientView data={fliterScope}/>
+     <ShopClientView data={fliterScope} productsList={Products}/>
+     
        
         </div>
     )

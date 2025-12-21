@@ -3,12 +3,14 @@ import { useState } from "react"
 import ShopFliter from "../siderComponent/shopFliter"
 import ProductLists from "./productLists";
 import { MocData } from "@/interface/fliterResponse";
+import { ProductsList } from "@/interface/productList";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef} from "react";
 import { SortItem } from "@/data/productsFliter";
 import SortCard from "./sortCard";
 type Props = {
-  data: MocData
+  data: MocData,
+  productsList:ProductsList[],
 }
 type SelectedFacets = {
   [key: string]: string | string[];
@@ -16,7 +18,7 @@ type SelectedFacets = {
 type SelectedSort={
   sort:string;
 }
-const ShopClientView = ({ data }: Props) => {
+const ShopClientView = ({ data, productsList}: Props) => {
 const [openFilter, setOpenFilter]=useState<boolean>(false)
 
 const [selectedQuery, setSelectedQuery]=useState<SelectedFacets>({});
@@ -28,7 +30,7 @@ const [selectedSort, setSelectedSort]=useState<SelectedSort>({sort:"Sorted by"})
 const cardRef = useRef<HTMLDivElement |null>(null);
 
 useEffect(()=>{
-  
+
   if (!openSort) return;
 const onPointerDown=(e:PointerEvent)=>{
   const el = cardRef.current;
@@ -143,7 +145,7 @@ const handleDesktopFacetChange =(key:string, value:string)=>{
         )}
       </div>
       <div>
-      <ProductLists />
+      <ProductLists data={productsList} />
       </div>
       </div>
     </div>

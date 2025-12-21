@@ -7,5 +7,5 @@ export const ShopApi = {
 
     getTargetedProducts:() =>
         apiShop.get<any>("/"),
-
+    
 }
