@@ -2,6 +2,7 @@ import { IoStarHalf } from "react-icons/io5";
 import { IoStar } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import { ProductsList } from "@/interface/productList";
+import Link from "next/link";
 type Props = {
   data: ProductsList[]
 }
@@ -13,8 +14,10 @@ const ProductLists = ({ data }: Props) => {
     <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,200px))] gap-10 mt-10 ml-10 mr-10">
       {
         data.map((product, index) => (
+          <Link href={`/shop/product/${product.productId}`}>
+          <div key={index} className="flex flex-col h-[350px]  border-gray-300 border justify-between"
 
-          <div key={index} className="flex flex-col h-[350px]  border-gray-300 border justify-between">
+          >
             <div className="">
              <img className=""></img>
             </div>
@@ -61,7 +64,7 @@ const ProductLists = ({ data }: Props) => {
             { product.reviewsCount!==null && <span className="">{product.reviewsCount} Reviews</span>}
             </div>
           </div>
-
+          </Link>
 
         ))
 
