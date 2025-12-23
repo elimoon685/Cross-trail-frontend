@@ -12,7 +12,6 @@ type Props={
 
 
 const ProductDetailsView = ({productData}:Props) => {
-
   return (
 
     <div className="flex flex-col max-w-7xl w-full self-center">

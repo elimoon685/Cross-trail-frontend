@@ -134,7 +134,7 @@ techspecs:{weight:"", material:"", fit:""},
     { id: "46601001", color: "brown", size: "S", price: 199, compareAtAmount:"255", stock: 5 },
     { id: "46611002", color: "brown", size: "M", price: 199, compareAtAmount:"255", stock: 2 },
     { id: "46621003", color: "brown", size: "L", price: 199, compareAtAmount:"255", stock: 9 },
-    { id: "46631004", color: "brown", size: "XL", price: 199, compareAtAmount:"255", stock: 5},
+    { id: "46631004", color: "brown", size: "XL", price: 199, compareAtAmount:"255", stock: 0},
     
     
   ],
