@@ -6,9 +6,12 @@ import { FiMenu } from "react-icons/fi";
 import SiderClick from "./shop/siderClick";
 import { menuData } from "@/data/hoverCol";
 import { RxCross2 } from "react-icons/rx";
+import { useCart } from "@/provider/shoppingCartProvider";
+import ShoppingCartSider from "./siderComponent/shopCartFliter";
 const ShopHeader=()=>{
     const [open, setOpen] = useState(false);
     const [openCategory, setOpenCategory]=useState(false)
+    const {count}=useCart();
 return (
      <>
     <div className="bg-[#FF3B30] h-30 flex items-center px-10 gap-10">
@@ -25,7 +28,9 @@ return (
         </div>
     </div>
     <div className={`fixed top-0 right-0 min-h-screen w-[400px] bg-white transform transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"} z-999`}>
-        
+        <div className="flex flex-col overflow-auto">
+            <ShoppingCartSider/>
+        </div>
     </div>
     <div className={`fixed top-0 left-0 flex flex-col h-screen w-[400px] bg-white transform transition-transform duration-500 ${openCategory ? "translate-x-0" : "-translate-x-full"} z-999`} >
     <div className="flex flex-col overflow-auto">

@@ -169,7 +169,7 @@ techspecs:{weight:"", material:"", fit:""},
   options: {
     color: [
       { value: "red", label: "Red", swatch: "#FF3B30"},
-      { value: "organe", label: "Orange", swatch: "#F97316" },
+      { value: "orange", label: "Orange", swatch: "#F97316" },
       { value: "green", label: "Green", swatch: "#5D9787" },
     ],
     size: ["40", "41", "42", "43"]

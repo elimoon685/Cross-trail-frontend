@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppProviders from "@/provider/provider";
 import HeaderFooterWrapper from "@/component/headerWrapper";
+import { ShoppingCartProvider} from "@/provider/shoppingCartProvider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,9 +30,11 @@ export default function RootLayout({
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppProviders>
+          <ShoppingCartProvider>
         <HeaderFooterWrapper>
           <main className="grow flex flex-col">{children}</main>
         </HeaderFooterWrapper>
+        </ShoppingCartProvider>
         </AppProviders>
       </body>
     </html>

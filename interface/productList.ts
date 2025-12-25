@@ -11,6 +11,19 @@ export interface ProductsList {
 
 
 }
+export type ShoppingCart={
+
+  productId:string;
+  color: string;
+  size: string | null;
+  quantity: number;
+  comparedPrice:number | null;
+  price?: number;
+  title?: string;
+  image?: string;
+
+}
+
 export type ProductColor = Record<string, string[]>;
 export type Money = number;
 export type Brand = {
