@@ -12,14 +12,17 @@ type Props={
 
 
 const ProductDetailsView = ({productData}:Props) => {
+  const firstValue=Object.keys(productData.mediaByColor);
+  const [scrollColor, setScrollColor]=useState<string>(firstValue[0])
+  const [shoppingCartImg, setShoppingCartImg]=useState<string>("")
   return (
 
     <div className="flex flex-col max-w-7xl w-full self-center">
       <div className="flex mt-10 gap-15">
 
-        <ImgShift data={productData.mediaByColor}/>
+        <ImgShift data={productData.mediaByColor} scrollColor={scrollColor} setShoppingCartImg={setShoppingCartImg}/>
 
-        <ProductOptions data={productData}/>
+        <ProductOptions data={productData} setColor={setScrollColor} shoppingCartImg={shoppingCartImg}/>
       </div>
       <div className="">
         <InfoDetails />

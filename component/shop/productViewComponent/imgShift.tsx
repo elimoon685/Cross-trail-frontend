@@ -2,23 +2,45 @@
 import { ProductColor } from "@/interface/productList";
 import { useRef } from "react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 type ImgShiftProps={
 
-    data:ProductColor
+    data:ProductColor,
+    scrollColor:string,
+    setShoppingCartImg:React.Dispatch<React.SetStateAction<string>>
 }
-const ImgShift=({data}:ImgShiftProps)=>{
+const ImgShift=({data, scrollColor, setShoppingCartImg}:ImgShiftProps)=>{
     const color=Object.keys(data);
     const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+    const listRef = useRef<HTMLDivElement | null>(null);
     const firstValue=color[0]
     const [selectedImg, setSelectedImg]=useState<string>(data[firstValue][0])
     
-    
+    useEffect(()=>{
+        const el=sectionRefs.current[scrollColor];
+        const container = listRef.current;
+        if (!container || !el) return;
+        
+        if (container.scrollHeight <= container.clientHeight) {
+            setSelectedImg(data[scrollColor][0])
+            setShoppingCartImg(data[scrollColor][0])
+            return;
+        }
+        const containerRect = container.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        const nextTop = container.scrollTop + (elRect.top - containerRect.top);
+        container.scrollTo({
+            top: nextTop,
+            behavior: "smooth",
+          });
+          setSelectedImg(data[scrollColor][0])
+          setShoppingCartImg(data[scrollColor][0])
+    },[scrollColor])
 
     return (
 
         <div className="flex gap-5">
-            <div className="flex flex-col h-[600px] overflow-auto scrollbar-hide">
+            <div className="flex flex-col h-[600px] overflow-auto scrollbar-hide" ref={listRef}>
             {
 
             color.map(color=>(

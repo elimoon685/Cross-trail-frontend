@@ -7,12 +7,13 @@ import { IoStar } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import { useCart } from "@/provider/shoppingCartProvider";
 type Props={
-
-    data:ProductDetails
+    data:ProductDetails;
+    setColor:React.Dispatch<React.SetStateAction<string>>;
+    shoppingCartImg:string;
 }
 
 const arr = Array.from({ length: 5 });
-const ProductOptions=({data}:Props)=>{
+const ProductOptions=({data, setColor, shoppingCartImg}:Props)=>{
 const [selectedVariant, setSelectedVariant]=useState<Variant>(data.variants[0]);
 const [selectedColor, setSelectedColor]=useState<string >(data.variants[0].color);
 const [selectedSize, setSelectedSize]=useState<string | null>(data.variants[0].size);
@@ -32,7 +33,6 @@ const uniqueColor=Array.from(
 const colorCode=uniqueColor.map(c=>{
 
     const targetedItem=data.options.color.find(item=>item.value==c)
-    console.log(targetedItem)
     return {[c]:targetedItem?.swatch}
 });
 
@@ -91,6 +91,10 @@ const onBlurQuantity=()=>{
         setQuantity("1");
         return;
       }
+      if(n>selectedVariant.stock){
+        setQuantity(String(selectedVariant.stock));
+        return;
+      }
 
 }
 const decreaseQuantity=()=>{
@@ -102,8 +106,8 @@ const decreaseQuantity=()=>{
 }
 const increaseQuantity=()=>{
     const n = Number(quantity);
-    setQuantity(String(n+1))
-
+    const value=Math.min(n+1, selectedVariant.stock)
+    setQuantity(String(value))
 
 }
     return (
@@ -167,12 +171,11 @@ const increaseQuantity=()=>{
           colorCode.map((c,index)=>{
             const [name, swatch] = Object.entries(c)[0];
            return (
-             
-             
+            
              <span key={`${index}-${name}`} 
              className={`w-10 h-10 ${selectedColor===name ? "border-2 border-black" : "border-2 border-gray-300"}`}
              style={{backgroundColor: swatch}}
-             onClick={()=>selectColor(name)}>
+             onClick={()=>{selectColor(name), setColor(name)}}>
             
              </span>
             
@@ -205,6 +208,7 @@ const increaseQuantity=()=>{
             selectedVariant.stock>0 ?
          <button className="bg-[#FF3B30] grow text-xl text-white font-bold"
          onClick={()=>addCart({
+            Id:selectedVariant.id,
             productId:data.id,
             color:selectedVariant.color,
             size:selectedVariant.size,
@@ -212,7 +216,7 @@ const increaseQuantity=()=>{
             comparedPrice:Number(selectedVariant.compareAtAmount),
             price:selectedVariant.price,
             title:data.title,
-            image:""
+            image:`/${shoppingCartImg}`
 
          })}
          >Add to cart</button>

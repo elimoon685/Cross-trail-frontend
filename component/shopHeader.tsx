@@ -1,7 +1,7 @@
 'use client'
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { FiMenu } from "react-icons/fi";
 import SiderClick from "./shop/siderClick";
 import { menuData } from "@/data/hoverCol";
@@ -12,6 +12,18 @@ const ShopHeader=()=>{
     const [open, setOpen] = useState(false);
     const [openCategory, setOpenCategory]=useState(false)
     const {count}=useCart();
+
+    useEffect(() => {
+        if (open) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      
+        return () => {
+          document.body.style.overflow = "";
+        };
+      }, [open]);
 return (
      <>
     <div className="bg-[#FF3B30] h-30 flex items-center px-10 gap-10">
@@ -22,14 +34,16 @@ return (
         />
         <CiSearch className="absolute h-6 w-6 left-[85%] top-[20%]"/>
         </div>
-        <div className="flex flex-1 justify-end gap-5">
+        <div className="flex flex-1 justify-end gap-5 relative">
         <FiMenu className="h-6 w-6 text-white cursor-pointer lg:hidden" onClick={()=>setOpenCategory(prev=>!prev)} />
         <FaShoppingCart className="h-6 w-6 text-white cursor-pointer" onClick={()=>setOpen(prev=>!prev)}/>
+            {count>0 && 
+            <span className="absolute bg-[#5D9787] rounded-full text-[12px] text-center px-1.5 -top-[40%] -right-[2%] font-bold text-white">{count}</span>}
         </div>
     </div>
-    <div className={`fixed top-0 right-0 min-h-screen w-[400px] bg-white transform transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"} z-999`}>
-        <div className="flex flex-col overflow-auto">
-            <ShoppingCartSider/>
+    <div className={`fixed top-0 right-0 min-h-screen max-w-[400px] w-full bg-white transform transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"} z-999`}>
+        <div className="flex flex-col h-screen">
+            <ShoppingCartSider toggle={setOpen}/>
         </div>
     </div>
     <div className={`fixed top-0 left-0 flex flex-col h-screen w-[400px] bg-white transform transition-transform duration-500 ${openCategory ? "translate-x-0" : "-translate-x-full"} z-999`} >

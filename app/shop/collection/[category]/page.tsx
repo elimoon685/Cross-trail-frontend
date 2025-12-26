@@ -7,7 +7,6 @@ type PageProps = {
   };
   
 const ProductsViews= async ({searchParams}:PageProps)=>{
-    console.log("isPromise", searchParams instanceof Promise);
     //const initialData = await ShopApi.getProducts(searchParams);
     return (
 

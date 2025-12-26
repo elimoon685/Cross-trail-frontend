@@ -12,15 +12,15 @@ export interface ProductsList {
 
 }
 export type ShoppingCart={
-
+  Id:string;
   productId:string;
   color: string;
   size: string | null;
   quantity: number;
   comparedPrice:number | null;
-  price?: number;
-  title?: string;
-  image?: string;
+  price: number;
+  title: string;
+  image: string;
 
 }
 
