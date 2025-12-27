@@ -23,7 +23,17 @@ export type ShoppingCart={
   image: string;
 
 }
+export type Review={
+Id:string;
+name:string;
+date:string;
+title:string;
+rate:number;
+helpful:number;
+dislike:number;
+content:string;
 
+}
 export type ProductColor = Record<string, string[]>;
 export type Money = number;
 export type Brand = {
@@ -76,6 +86,6 @@ export type ProductDetails = {
     description: string;
     ogImage: string;
   };
-
+reviewsList:Review[]
 
 }

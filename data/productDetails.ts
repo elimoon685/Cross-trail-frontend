@@ -31,9 +31,10 @@ export const ProductData:ProductDetails[]=[
     { id: "47551004", color: "red",  size: "XL", price: 199, compareAtAmount:"255", stock: 8 },
     
   ],
-features:["a", "b", "c","d","e","f"],
+  features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+
+  techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
@@ -41,7 +42,118 @@ techspecs:{weight:"", material:"", fit:""},
     "ogImage": "https://.../black-1.jpg"
   },
   
-
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 
 
 
@@ -82,9 +194,10 @@ techspecs:{weight:"", material:"", fit:""},
 
     
   ],
-features:["a", "b", "c","d","e","f"],
+  features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+
+  techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
@@ -93,7 +206,118 @@ techspecs:{weight:"", material:"", fit:""},
   },
   
 
-
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 
 
 },
@@ -138,9 +362,10 @@ techspecs:{weight:"", material:"", fit:""},
     
     
   ],
-features:["a", "b", "c","d","e","f"],
+  features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+
+  techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
@@ -149,7 +374,118 @@ techspecs:{weight:"", material:"", fit:""},
   },
   
 
-
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 
 
 },
@@ -200,9 +536,10 @@ techspecs:{weight:"", material:"", fit:""},
 
     
   ],
-features:["a", "b", "c","d","e","f"],
+  features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+
+  techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
@@ -211,7 +548,118 @@ techspecs:{weight:"", material:"", fit:""},
   },
   
 
-
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 
 
 },{
@@ -250,16 +698,128 @@ techspecs:{weight:"", material:"", fit:""},
 
     
   ],
-features:["a", "b", "c","d","e","f"],
+  
+features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
-
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 },
 {
   id: "prod_10006",
@@ -291,15 +851,127 @@ techspecs:{weight:"", material:"", fit:""},
     //{ id: "58541002", color: "red",  size: null, price: 220, compareAtAmount:"255", stock: 0 },
 
   ],
-features:["a", "b", "c","d","e","f"],
+  features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
 
-techspecs:{weight:"", material:"", fit:""},
+
+  techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
     "title": "Nike Pegasus 41 | Running Shoe",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
-  
+  reviewsList:[
+    {
+      Id: "r1",
+      name: "Alex",
+      date: "2025-01-12",
+      title: "Great overall experience",
+      rate: 4,
+      helpful: 12,
+      dislike: 1,
+      content:
+        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
+    },
+    {
+      Id: "r2",
+      name: "Mia",
+      date: "2025-01-15",
+      title: "Decent, but needs polish",
+      rate: 3,
+      helpful: 5,
+      dislike: 2,
+      content:
+        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
+    },
+    {
+      Id: "r3",
+      name: "Daniel",
+      date: "2025-01-18",
+      title: "Disappointing experience",
+      rate: 1,
+      helpful: 20,
+      dislike: 6,
+      content:
+        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
+    },
+    {
+      Id: "r4",
+      name: "Sophie",
+      date: "2025-01-22",
+      title: "Excellent value for money",
+      rate: 5,
+      helpful: 33,
+      dislike: 0,
+      content:
+        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
+    },
+    {
+      Id: "r5",
+      name: "Leo",
+      date: "2025-01-25",
+      title: "Meets expectations well",
+      rate: 4,
+      helpful: 8,
+      dislike: 1,
+      content:
+        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
+    },
+    {
+      Id: "r6",
+      name: "Emily",
+      date: "2025-01-28",
+      title: "Some highlights, some issues",
+      rate: 3,
+      helpful: 6,
+      dislike: 3,
+      content:
+        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
+    },
+    {
+      Id: "r7",
+      name: "Jack",
+      date: "2025-02-01",
+      title: "Exactly what I needed",
+      rate: 5,
+      helpful: 18,
+      dislike: 0,
+      content:
+        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
+    },
+    {
+      Id: "r8",
+      name: "Olivia",
+      date: "2025-02-03",
+      title: "Feels rough around the edges",
+      rate: 2,
+      helpful: 9,
+      dislike: 4,
+      content:
+        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
+    },
+    {
+      Id: "r9",
+      name: "Ryan",
+      date: "2025-02-06",
+      title: "Worth trying",
+      rate: 4,
+      helpful: 11,
+      dislike: 2,
+      content:
+        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
+    },
+    {
+      Id: "r10",
+      name: "Lily",
+      date: "2025-02-10",
+      title: "Better than expected",
+      rate: 5,
+      helpful: 27,
+      dislike: 1,
+      content:
+        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
+    }
+  ]
 }
 ]
