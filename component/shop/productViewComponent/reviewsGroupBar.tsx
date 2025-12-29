@@ -8,11 +8,10 @@ type Props={
 }
 
 const ReviewsGroupBar=({data, total}:Props)=>{
-
-
+    
     return (
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 ">
             {
               arr.map((_, idx)=>(
               <div className="flex items-center gap-3">
@@ -31,7 +30,7 @@ const ReviewsGroupBar=({data, total}:Props)=>{
                     }
                 </span>
                 <div className="w-[200px] h-4 border-gray-300 border">
-                    <div className="h-full bg-gray-300" style={{width:`${(data[5-idx]/total)*100}%`}}></div>
+                    <div className="h-full bg-gray-500" style={{width:`${(data[5-idx]/total)*100}%`}}></div>
                 </div>
                 <span>{data[5-idx]}</span>
                 </div>

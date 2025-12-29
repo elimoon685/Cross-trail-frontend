@@ -14,7 +14,7 @@ const RateStart = ({ data, count}: Props) => {
 
   if (data === 0) {
 
-    return <div className="flex gap-1">
+    return <div className="flex gap-1 self-center">
       {
         arr.map((_, index) => {
 
@@ -24,7 +24,7 @@ const RateStart = ({ data, count}: Props) => {
     </div>
   } else {
 
-    return <div className="flex flex-col">
+    return <div className="flex flex-col self-center">
       <div className="flex gap-3">
       <span className=" text-3xl font-bold self-start">{data}</span>
       
@@ -47,7 +47,7 @@ const RateStart = ({ data, count}: Props) => {
 
       </div>
       </div>
-      <span className="text-2xl font-bold self-end">{count} Reviews</span>
+      <span className=" font-bold self-center">{count} Reviews</span>
     </div>
   }
 
