@@ -43,116 +43,6 @@ export const ProductData:ProductDetails[]=[
   },
   
   reviewsList:[
-    {
-      Id: "r1",
-      name: "Alex",
-      date: "2025-01-12",
-      title: "Great overall experience",
-      rate: 4,
-      helpful: 12,
-      dislike: 1,
-      content:
-        "Overall, the experience has been great. The features are solid, the flow is intuitive, and it works well for daily use."
-    },
-    {
-      Id: "r2",
-      name: "Mia",
-      date: "2025-01-15",
-      title: "Decent, but needs polish",
-      rate: 3,
-      helpful: 5,
-      dislike: 2,
-      content:
-        "It does the job, but some details feel unrefined. A few parts are a bit clunky, so I'd love to see improvements."
-    },
-    {
-      Id: "r3",
-      name: "Daniel",
-      date: "2025-01-18",
-      title: "Disappointing experience",
-      rate: 1,
-      helpful: 20,
-      dislike: 6,
-      content:
-        "This was far from what I expected. The experience was frustrating and I ran into several issues. I wouldn't recommend it."
-    },
-    {
-      Id: "r4",
-      name: "Sophie",
-      date: "2025-01-22",
-      title: "Excellent value for money",
-      rate: 5,
-      helpful: 33,
-      dislike: 0,
-      content:
-        "I’m genuinely impressed for the price. It’s stable, smooth to use, and delivers more than I expected. Highly recommended."
-    },
-    {
-      Id: "r5",
-      name: "Leo",
-      date: "2025-01-25",
-      title: "Meets expectations well",
-      rate: 4,
-      helpful: 8,
-      dislike: 1,
-      content:
-        "The performance matches the description. No major drawbacks so far, and it feels reliable overall."
-    },
-    {
-      Id: "r6",
-      name: "Emily",
-      date: "2025-01-28",
-      title: "Some highlights, some issues",
-      rate: 3,
-      helpful: 6,
-      dislike: 3,
-      content:
-        "There are a few really nice design choices, but also some small problems that get in the way. It's okay, but not perfect."
-    },
-    {
-      Id: "r7",
-      name: "Jack",
-      date: "2025-02-01",
-      title: "Exactly what I needed",
-      rate: 5,
-      helpful: 18,
-      dislike: 0,
-      content:
-        "This fits my needs perfectly. Everything feels easy and natural to use, and I haven't noticed any big issues yet."
-    },
-    {
-      Id: "r8",
-      name: "Olivia",
-      date: "2025-02-03",
-      title: "Feels rough around the edges",
-      rate: 2,
-      helpful: 9,
-      dislike: 4,
-      content:
-        "The core features work, but the overall experience feels a bit rough. Some interactions could be designed more thoughtfully."
-    },
-    {
-      Id: "r9",
-      name: "Ryan",
-      date: "2025-02-06",
-      title: "Worth trying",
-      rate: 4,
-      helpful: 11,
-      dislike: 2,
-      content:
-        "There’s room to improve, but it performs well overall. For most people, it’s a pretty good option."
-    },
-    {
-      Id: "r10",
-      name: "Lily",
-      date: "2025-02-10",
-      title: "Better than expected",
-      rate: 5,
-      helpful: 27,
-      dislike: 1,
-      content:
-        "I didn’t expect much at first, but it turned out to be really good. The details and stability are surprisingly strong."
-    }
   ]
 
 
@@ -178,8 +68,8 @@ export const ProductData:ProductDetails[]=[
     ],
     size: ["S", "M", "L", "XL"]
   },
-  reviews: 4.2,
-  reviewsCount:14,
+  reviews: 3.4,
+  reviewsCount:10,
   mediaByColor: {
     purple: ["Fleece Hoodies men's_1.png", "Fleece Hoodies men's_2.png"],
     
@@ -289,7 +179,7 @@ export const ProductData:ProductDetails[]=[
       name: "Olivia",
       date: "2025-02-03",
       title: "Feels rough around the edges",
-      rate: 2,
+      rate: 1,
       helpful: 9,
       dislike: 4,
       content:
@@ -300,7 +190,7 @@ export const ProductData:ProductDetails[]=[
       name: "Ryan",
       date: "2025-02-06",
       title: "Worth trying",
-      rate: 4,
+      rate: 3,
       helpful: 11,
       dislike: 2,
       content:
@@ -510,8 +400,8 @@ export const ProductData:ProductDetails[]=[
     ],
     size: ["40", "41", "42", "43"]
   },
-  reviews: 3.7,
-  reviewsCount:21,
+  reviews: 3.2,
+  reviewsCount:10,
   mediaByColor: {
     red: ["Hiking shoes_1.png", "Hiking shoes_2.png"],
     orange: ["Hiking shoes_3.png", "Hiking shoes_4.png"],
@@ -587,7 +477,7 @@ export const ProductData:ProductDetails[]=[
       name: "Sophie",
       date: "2025-01-22",
       title: "Excellent value for money",
-      rate: 5,
+      rate: 4,
       helpful: 33,
       dislike: 0,
       content:
@@ -609,7 +499,7 @@ export const ProductData:ProductDetails[]=[
       name: "Emily",
       date: "2025-01-28",
       title: "Some highlights, some issues",
-      rate: 3,
+      rate: 2,
       helpful: 6,
       dislike: 3,
       content:
@@ -620,7 +510,7 @@ export const ProductData:ProductDetails[]=[
       name: "Jack",
       date: "2025-02-01",
       title: "Exactly what I needed",
-      rate: 5,
+      rate: 4,
       helpful: 18,
       dislike: 0,
       content:
@@ -653,7 +543,7 @@ export const ProductData:ProductDetails[]=[
       name: "Lily",
       date: "2025-02-10",
       title: "Better than expected",
-      rate: 5,
+      rate: 4,
       helpful: 27,
       dislike: 1,
       content:
@@ -678,12 +568,12 @@ export const ProductData:ProductDetails[]=[
   options: {
     color: [
       { value: "red", label: "Red", swatch: "#FF3B30"},
-      { value: "organe", label: "Orange", swatch: "#F97316" },
+      { value: "orange", label: "Orange", swatch: "#F97316" },
     ],
     size: ["S/M", "M/L"]
   },
-  reviews: null,
-  reviewsCount:null,
+  reviews: 3.6,
+  reviewsCount:10,
   mediaByColor: {
     red: ["Tatenen trekking poles_1.png", "Tatenen trekking poles_2.png", "Tatenen trekking poles_3.png"],
     orange: ["Tatenen trekking poles_4.png", "Tatenen trekking poles_5.png","Tatenen trekking poles_6.png"],

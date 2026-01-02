@@ -41,6 +41,14 @@ export type Brand = {
     name: string;
 };
 
+export type ReviewForm = {
+  name: string;
+  email: string;
+  rate: number;
+  title: string;
+  content: string;
+};
+
 export type Category = {
     id: string;
     name: string;

@@ -32,12 +32,12 @@ const RateStart = ({ data, count}: Props) => {
         {
           arr.map((_, index) => {
             if (data! - index > 0.5) {
-              return <IoStar className="text-amber-500 w-7 h-7" />
+              return <IoStar key={index} className="text-amber-500 w-7 h-7" />
             } else if (data! - index < 0.5 && data! - index > 0) {
-              return <IoStarHalf className="text-amber-500 w-7 h-7" />
+              return <IoStarHalf key={index} className="text-amber-500 w-7 h-7" />
             } else {
 
-              return <IoStarOutline className="text-amber-500 w-7 h-7" />
+              return <IoStarOutline key={index} className="text-amber-500 w-7 h-7" />
             }
 
           }

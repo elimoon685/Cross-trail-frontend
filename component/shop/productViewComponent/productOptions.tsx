@@ -112,7 +112,7 @@ const increaseQuantity=()=>{
 }
     return (
 
-        <div className="flex flex-col gap-5 grow justify-center">
+        <div className="flex flex-col gap-5 grow justify-center mx-5">
         <span className="text-3xl font-bold">{data.title}</span>
         {
             selectedVariant.compareAtAmount ? 

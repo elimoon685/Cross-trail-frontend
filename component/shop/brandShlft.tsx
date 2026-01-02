@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect} from "react";
-
+import Link from "next/link";
 import { BrandList } from "@/data/svgArray";
 
 const BrandShift=()=>{
@@ -18,12 +18,14 @@ for(let i=0; i<size; i++){
 }
 return (
 
-    <div className="flex flex-col max-w-[320px] w-full bg-white p-3 overflow-hidden">
+    <div className="w-[300px] h-[400px] bg-white p-3 overflow-hidden ">
       <div
-        className="flex flex-col justify-between grow items-center"
+        className="flex flex-col justify-between grow items-center h-full"
       >
         {visibleContent.map(({id, Icon, className }) => (
-          <Icon key={id} className={className}/>
+         <Link key={id} href={`/shop/collection/${id}`}>
+          <Icon  className={className}/>
+          </Link>
         ))}
       </div>
     </div>

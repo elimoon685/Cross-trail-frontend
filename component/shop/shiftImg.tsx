@@ -4,7 +4,9 @@ import Image from "next/image"
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 const imgUrl = ["/clothes.jpg", "/tool.jpg", "/pack.jpg", "/tent.jpg"]
+
 const ShiftImg = () => {
     const router = useRouter()
     const [index, setIndex] = useState<number>(0)
@@ -21,15 +23,18 @@ const ShiftImg = () => {
     const mouseEnter = () => setHover(true);
     const mouseLeave = () => setHover(false)
     return (
-        <div className="relative" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+        <div className="w-[400px] overflow-hidden">
+        <div className="relative w-full " onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+            <Link href={`/shop/collection${imgUrl[index]}`} className="block">
             <Image src={imgUrl[index]} alt={imgUrl[index].toUpperCase()} width={400} height={300} className="transition-transform duration-500 ease-in-out" />
-            <div className="absolute inset-y-40 left-0 w-[5%] bg-gray-300 border border-black border-l-0 rounded-r-3xl">
+            </Link>
+            <div className="absolute inset-y-40 left-0 w-[5%] bg-gray-300 border border-black border-l-0 rounded-r-3xl pointer-events-none">
 
             </div>
-            <div className="absolute inset-y-40 right-0 w-[5%] bg-gray-300 border border-black border-r-0 rounded-l-3xl">
+            <div className="absolute inset-y-40 right-0 w-[5%] bg-gray-300 border border-black border-r-0 rounded-l-3xl pointer-events-none">
 
             </div>
-            <div className="absolue inset-0 gray"></div>
+            <div className="absolute inset-0 gray pointer-events-none"></div>
             <MdOutlineArrowForwardIos className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer"
                 onClick={next}
             />
@@ -45,6 +50,7 @@ const ShiftImg = () => {
              </button>
             )}
            </div>
+        </div>
         </div>
     )
 }

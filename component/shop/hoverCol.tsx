@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 type CategoryMap = Record<string, string[]>;
 
 type Props = {
@@ -8,7 +8,10 @@ const HoverCol = ({ data }: Props) => {
   const [categoryName, items] = Object.entries(data)[0];
   return (
     <li className="relative group/sec">
-      <span className="relative inline-block">{categoryName}
+      <span className="relative inline-block">
+        <Link href={`/shop/collection/${categoryName}`}>
+        {categoryName}
+        </Link>
         <span className="
        absolute
       left-0
@@ -29,7 +32,9 @@ const HoverCol = ({ data }: Props) => {
       <ul className="flex flex-col gap-3 mt-3">
         {items.map((item, idx) => (
           <li key={idx} className="text-sm whitespace-nowrap hover:text-[#FF3B30]">
+            <Link href={`/shop/collection/${item}`}>
             {item}
+            </Link>
           </li>
         ))}
       </ul>

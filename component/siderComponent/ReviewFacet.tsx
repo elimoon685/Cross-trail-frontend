@@ -41,7 +41,7 @@ return (
        <div className="max-h-70 overflow-y-auto thin-scrollbar">
         {
             options.map((review,index)=>(
-             <label className="flex items-center gap-3 mb-2">
+             <label className="flex items-center gap-3 mb-2" key={index}>
                 <input
                 type="checkbox"
                 checked={selected.has(review.name)}
@@ -53,9 +53,9 @@ return (
                     arr.map((_, idx)=>{
 
                         if(idx < Number(review.name)){
-                          return <FaStar className="text-amber-500 w-5 h-5" />
+                          return <FaStar key={idx} className="text-amber-500 w-5 h-5" />
                         }
-                        return <FaRegStar className="text-amber-500 w-5 h-5"/>
+                        return <FaRegStar key={idx} className="text-amber-500 w-5 h-5"/>
                     })
                  }
                  

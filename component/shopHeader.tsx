@@ -14,7 +14,7 @@ const ShopHeader=()=>{
     const {count}=useCart();
 
     useEffect(() => {
-        if (open) {
+        if (open || openCategory) {
           document.body.style.overflow = "hidden";
         } else {
           document.body.style.overflow = "";
@@ -23,7 +23,7 @@ const ShopHeader=()=>{
         return () => {
           document.body.style.overflow = "";
         };
-      }, [open]);
+      }, [open, openCategory]);
 return (
      <>
     <div className="bg-[#FF3B30] h-30 flex items-center px-10 gap-10">
@@ -46,20 +46,20 @@ return (
             <ShoppingCartSider toggle={setOpen}/>
         </div>
     </div>
-    <div className={`fixed top-0 left-0 flex flex-col h-screen w-[400px] bg-white transform transition-transform duration-500 ${openCategory ? "translate-x-0" : "-translate-x-full"} z-999`} >
+    <div className={`fixed top-0 left-0 flex flex-col h-screen max-w-[400px] w-full bg-white transform transition-transform duration-500 ${openCategory ? "translate-x-0" : "-translate-x-full"} z-999`} >
     <div className="flex flex-col overflow-auto">
         <div className="flex mb-10 border-b-2 border-gray-200 justify-end">
          <span className="px-3 py-2"><RxCross2 className="w-7 h-7" onClick={()=>{setOpenCategory(false)}} /></span>
         </div>
     {menuData.map((item, index)=>(
     
-     <div className=""><SiderClick key={index} data={item} idx={index}/></div>
+     <SiderClick key={index} data={item} idx={index}/>
 
     ))}
     </div>
     </div>
     {(open || openCategory)  && (
-    <div className="fixed inset-0 bg-black/40"
+    <div className="fixed inset-0 bg-black/40 z-50"
       onClick={()=>{setOpen(false); setOpenCategory(false)}}>
 
     </div>

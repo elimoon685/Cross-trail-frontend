@@ -19,7 +19,7 @@ const ProductDetailsView = ({ productData }: Props) => {
     <div className="flex flex-col gap-5">
       <div className="flex justify-center">
         <div className="flex max-w-7xl grow ">
-          <div className="flex mt-10 gap-15 grow">
+          <div className="flex flex-col mt-10 gap-15 grow md:flex-row">
 
             <ImgShift data={productData.mediaByColor} scrollColor={scrollColor} setShoppingCartImg={setShoppingCartImg} />
 
@@ -28,13 +28,13 @@ const ProductDetailsView = ({ productData }: Props) => {
         </div>
       </div>
       <div className="flex justify-center bg-gray-100">
-        <div className="flex max-w-7xl grow">
+        <div className="flex max-w-7xl grow mx-5">
         
         <InfoDetails feature={productData.features} techspecs={productData.techspecs}/>
         </div>
       </div>
       <div className="flex justify-center">
-      <div className="flex max-w-7xl grow">
+      <div className="flex max-w-7xl grow mx-5 mb-10">
         <ReviewsArea data={productData.reviewsList} />
         </div>
       </div>

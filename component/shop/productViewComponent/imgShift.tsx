@@ -74,7 +74,13 @@ const ImgShift=({data, scrollColor, setShoppingCartImg}:ImgShiftProps)=>{
             }
 
             </div>
-           <Image src={`/${selectedImg}`} alt={selectedImg.toUpperCase()} width={600} height={600}/>
+            <div className="min-w-0 flex-1">
+           <Image src={`/${selectedImg}`} 
+                  alt={selectedImg.toUpperCase()} 
+                  width={600} 
+                  height={600}
+                  />
+           </div>
         </div>
 
     )

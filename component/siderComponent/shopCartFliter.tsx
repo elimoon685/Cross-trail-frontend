@@ -2,6 +2,7 @@ import { useCart } from "@/provider/shoppingCartProvider";
 import { RxCross2 } from "react-icons/rx";
 import { ImBin } from "react-icons/im";
 import Image from "next/image";
+import Link from "next/link";
 type Props={
 
   toggle:React.Dispatch<React.SetStateAction<boolean>>
@@ -20,14 +21,17 @@ const ShoppingCartSider = ({toggle}:Props) => {
       ><RxCross2 className="w-7 h-7" /></span>
       <span className="text-2xl font-bold self-center">Cart</span>
       <span className="h-1 w-full bg-gray-300 mb-3"></span>
-      <div className="flex flex-col h-[calc(100vh-400px)] overflow-y-auto">
+      <div className="flex flex-col h-[calc(100vh-250px)] overflow-y-auto">
       {shoppingCart.length > 0 ? (
         shoppingCart.map((item, index) => (
           <div key={index} className="flex justify-between h-25 px-3 pb-3 border-b-2 border-gray-200 mt-3 ">
           <div className="flex justify-between gap-3">
             <Image src={item.image} width={80} height={40} alt={item.title}></Image>
             <div className="flex flex-col justify-between">
+              <Link href={`/shop/product/${item.productId}`}
+              onClick={() => toggle(false)}>
               <span>{item.title}</span>
+              </Link>
               <span>{item.color} / {item.size}</span>
               <div className="flex items-center w-30 h-7 border-2 border-gray-300">
                 <span className="text-xl  flex-1 flex justify-center border-r-2 border-gray-300">-</span>

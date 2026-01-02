@@ -14,14 +14,14 @@ const ReviewsGroupBar=({data, total}:Props)=>{
         <div className="flex flex-col gap-1 ">
             {
               arr.map((_, idx)=>(
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3" key={idx }>
                 <span className="flex gap-1">
                     {
                      arr.map((_, index)=>{
                      if(arr.length-idx>index){
-                        return <IoStar className="text-amber-500 w-5 h-5"/>
+                        return <IoStar key={index} className="text-amber-500 w-5 h-5"/>
                      }else{
-                        return < IoStarOutline className="text-amber-500 w-5 h-5"/>
+                        return < IoStarOutline key={index} className="text-amber-500 w-5 h-5"/>
                      }
                        
 

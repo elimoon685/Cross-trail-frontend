@@ -15,8 +15,8 @@ const ProductLists = ({ data }: Props) => {
     <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,200px))] gap-10 mt-10 ml-10 mr-10">
       {
         data.map((product, index) => (
-          <Link href={`/shop/product/${product.productId}`}>
-          <div key={index} className="flex flex-col h-[350px]  border-gray-300 border"
+          <Link key={index} href={`/shop/product/${product.productId}`}>
+          <div  className="flex flex-col h-[350px]  border-gray-300 border"
 
           >
             <div className="self-center">
@@ -47,12 +47,12 @@ const ProductLists = ({ data }: Props) => {
                 {
                   arr.map((_, index) => {
                     if (product.reviews! - index > 0.5) {
-                      return <IoStar className="text-amber-500 w-4 h-4" />
+                      return <IoStar key={index} className="text-amber-500 w-4 h-4" />
                     } else if (product.reviews! - index < 0.5 && product.reviews! - index > 0) {
-                      return <IoStarHalf className="text-amber-500 w-4 h-4" />
+                      return <IoStarHalf key={index} className="text-amber-500 w-4 h-4" />
                     } else {
 
-                      return <IoStarOutline className="text-amber-500 w-4 h-4" />
+                      return <IoStarOutline key={index} className="text-amber-500 w-4 h-4" />
                     }
 
                   }
