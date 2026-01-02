@@ -10,7 +10,7 @@ overlay management, complex layouts, and cross-component state coordination.
 
 ## Preview
 
-![Home](./screenShots/home.png)
+![Home](./screenShots/homePage.png)
 ![Hover Navigation](./screenShots/hoverNavigation.png)
 ![Product Page](./screenShots/productPage.png)
 
