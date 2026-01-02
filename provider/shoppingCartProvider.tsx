@@ -15,7 +15,6 @@ export const ShoppingCartContext=createContext<CTX |null>(null);
 export function ShoppingCartProvider({children}:{ children: React.ReactNode }){
 
     const [shoppingCart, setShoppingCart]=useState<ShoppingCart[]>([]);
-    console.log("shopping", shoppingCart)
     useEffect(()=>{
         setShoppingCart(getCart())
     }, [])
