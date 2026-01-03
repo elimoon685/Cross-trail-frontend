@@ -80,7 +80,7 @@ const LoginCard = ({role,title, themeColor, footerWords }:LoginCardPros) => {
         </button>
       </form>
       <div className="text-center mt-3">
-      <span>{footerWords[0]}<Link href="/login-organizer" className=" hover:underline" style={{color:themeColor[2]}}>{footerWords[1]}</Link></span>
+      <span>{footerWords[0]} <Link href="/login-organizer" className=" hover:underline" style={{color:themeColor[2]}}>{footerWords[1]}</Link></span>
       </div>
     </div>
   )
