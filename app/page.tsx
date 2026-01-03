@@ -19,19 +19,25 @@ export default function Home() {
     <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="organizer">
       <Image alt="teamleader" src="/team leader.png" fill className="object-cover" priority></Image>
       <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Become organizer and publish your activity</h1></div>
-      <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
-      <button className="text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as an organizer</button>
-
-       <button className="text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+      <div className="absolute top-[80%] left-[50%] -translate-1/2 flex flex-col gap-5 lg:flex-row lg:gap-10">
+      <Link href={`/register-organizer`}>
+      <button className="lg:text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as an organizer</button>
+      </Link>
+      <Link href={`/login-organizer`}>
+       <button className="lg:text-2xl text-white px-4 py-2 border border-[#345975] rounded-3xl bg-[#345975] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+       </Link>
        </div>
     </div>
     <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="join">
       <Image alt="participants" src="/paticipants.png" fill className="object-cover" priority></Image>
-      <div className="flex absolute top-[50%] left-[50%] -translate-1/2"><h1 className="text-4xl text-white self-center">Become Particpants and join the activity</h1></div>
-      <div className="absolute top-[70%] left-[50%] -translate-1/2 flex gap-20 flex-wrap">
-      <button className="text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as participants</button>
-
-       <button className="text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+      <div className="flex absolute top-[50%] left-[50%] -translate-1/2">
+      <h1 className="text-4xl text-white self-center">Become Particpants and join the activity</h1>
+      </div>
+      <div className="absolute top-[80%] left-[50%] -translate-1/2 flex flex-col gap-5 lg:flex-row lg:gap-10">
+      <button className="lg:text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer ">Register as participants</button>
+      <Link href={`/login-participants`}>
+       <button className="lg:text-2xl text-white px-4 py-2 border border-[#5D9787] rounded-3xl bg-[#5D9787] hover:opacity-70 hover:scale-105 transform transition duration-200 ease-out cursor-pointer">Already have account? Login</button>
+       </Link>
        </div>
     </div>
     <div className="h-[calc(100vh-80px)] relative scroll-mt-20" id="shop" >
