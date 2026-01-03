@@ -3,7 +3,7 @@ const Products:ProductsList[]=[
 
 {   
     productId:"prod_10001",
-    name:"Stretch shell",
+    name:"stretch shell",
     color:["#FF3B30"],
     price:123,
     compareAtPrice:null,
@@ -17,8 +17,8 @@ const Products:ProductsList[]=[
     price:567,
     compareAtPrice:255,
     currency:"Aud",
-    reviews: 4.2,
-    reviewsCount:14,
+    reviews: 3.4,
+    reviewsCount:10,
 
 
 },
@@ -29,8 +29,8 @@ const Products:ProductsList[]=[
     price:267,
     compareAtPrice:200,
     currency:"Aud",
-    reviews: 5,
-    reviewsCount:37,
+    reviews: 3.6,
+    reviewsCount:10,
 
 
 },
@@ -41,8 +41,8 @@ const Products:ProductsList[]=[
     price:372,
     compareAtPrice:244,
     currency:"Aud",
-    reviews: 3.7,
-    reviewsCount:21,
+    reviews: 3.2,
+    reviewsCount:10,
 
 
 },
@@ -61,12 +61,12 @@ const Products:ProductsList[]=[
 {   
     productId:"prod_10006",
     name:"HeadLamps",
-    color:["#FFFFFF"],
+    color:["#000000"],
     price:60,
     compareAtPrice:55,
     currency:"Aud",
-    reviews: 5,
-    reviewsCount:4,
+    reviews: 3.6,
+    reviewsCount:10,
 
 
 },

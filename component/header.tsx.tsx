@@ -1,12 +1,24 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect} from "react";
 import { RxAvatar } from "react-icons/rx";
 import Link from "next/link";
 const Header=()=>{
 
     const [openLogin, setOpenLogin]=useState<boolean>(false)
+    const loginRef = useRef<HTMLDivElement |null>(null);
+    useEffect(()=>{
+       if(!openLogin) return;
+        const onClickDown=(e:PointerEvent)=>{
+             const el=loginRef.current
+             if(!el) return;
+             if(el.contains(e.target as Node)) return;
+             setOpenLogin(false)
+        }
+        document.addEventListener("pointerdown", onClickDown)
+        return ()=>document.removeEventListener("pointerdown", onClickDown)
 
+    },[openLogin])
 
     return (
         <header className="w-full flex justify-between px-10 h-[60px] items-center">
@@ -25,7 +37,7 @@ const Header=()=>{
     transform transition-transform
     w-50  rounded border bg-white shadow p-1 
     z-999
-    `}
+    `} ref={loginRef}
   >
     <div className="flex flex-col">
         <Link href={`/login-admin`}>

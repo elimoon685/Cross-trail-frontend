@@ -726,7 +726,7 @@ techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
   descriptionHtml: "<p>...</p>",
   options: {
     color: [
-      { value: "black", label: "Black", swatch: "#FF3B30"},
+      { value: "black", label: "Black", swatch: "#000000"},
       { value: "blue", label: "Blue", swatch: "#F97316" },
     ],
     size: null,
