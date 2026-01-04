@@ -18,8 +18,10 @@ function findProduct(productID: string) {
      };
    }
  
-   
-   const title = product.seo?.title ?? `${product.title} | ${product.brand?.name ?? "Shop"}`;
+   const baseTitle = (product.seo?.title ?? product.title).trim();
+const brand = product.brand?.name ?  `- ${product.brand.name}` : "";
+const gender = product.attributes?.gender ? `- ${product.attributes.gender}` : "";
+   const title = `${baseTitle} ${brand} ${gender}`;
    const description =
      product.seo?.description ??
      `Shop ${product.title} by ${product.brand?.name ?? "our brand"}. Available sizes: ${product.options?.size?.join(

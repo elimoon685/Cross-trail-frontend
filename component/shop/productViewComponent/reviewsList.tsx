@@ -35,9 +35,9 @@ const ReviewsList = ({ data }: Props) => {
                   
                   if(c.rate-index>0){
 
-                    return <IoStar className="text-amber-500 w-5 h-5" />
+                    return <IoStar key={index} className="text-amber-500 w-5 h-5" />
                   }else{
-                    return <IoStarOutline className="text-amber-500 w-5 h-5" />
+                    return <IoStarOutline key={index} className="text-amber-500 w-5 h-5" />
                   }
 
 

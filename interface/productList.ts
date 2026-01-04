@@ -66,6 +66,10 @@ export type ColorOption = {
     compareAtAmount: string | null;
     stock: number;
   };
+  export type Attribute={
+
+    gender: string | null
+  };
 export type ProductDetails = {
     id: string,
     handle: string;
@@ -79,6 +83,7 @@ export type ProductDetails = {
         size: string[]| null;
       };
     mediaByColor: ProductColor;
+    attributes:Attribute
     variants: Variant[];
     features: string[];
   techspecs: {

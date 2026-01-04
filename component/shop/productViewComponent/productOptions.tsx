@@ -129,12 +129,12 @@ const increaseQuantity=()=>{
                 {
                   arr.map((_, index) => {
                     if (data.reviews! - index > 0.5) {
-                      return <IoStar className="text-amber-500 w-6 h-6" />
+                      return <IoStar key={index} className="text-amber-500 w-6 h-6" />
                     } else if (data.reviews! - index < 0.5 && data.reviews! - index > 0) {
-                      return <IoStarHalf className="text-amber-500 w-6 h-6" />
+                      return <IoStarHalf key={index} className="text-amber-500 w-6 h-6" />
                     } else {
 
-                      return <IoStarOutline className="text-amber-500 w-6 h-6" />
+                      return <IoStarOutline key={index} className="text-amber-500 w-6 h-6" />
                     }
 
                   }

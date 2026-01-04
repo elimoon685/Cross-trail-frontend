@@ -66,7 +66,9 @@ const ShoppingCartSider = ({toggle}:Props) => {
         <span className="text-xl flex items-center gap-1">Subtotal items:<span className="font-bold text-2xl">{count}</span></span>
         <span className="text-xl flex items-center gap-1">Total:<span className="font-bold text-2xl">${totalPrice}</span></span>
       </div>
-      <button className="bg-[#5D9787] px-3 py-3 text-2xl text-white font-bold cursor-pointer">Check out</button>
+      <Link href={`/shop/check-out`} className="flex grow">
+      <button className="bg-[#5D9787] px-3 py-3 text-2xl text-white font-bold cursor-pointer grow">Check out</button>
+      </Link>
       </div>
 }
 

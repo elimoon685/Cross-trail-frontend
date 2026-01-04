@@ -4,7 +4,7 @@ export const ProductData:ProductDetails[]=[
   id: "prod_10001",
   handle: "nike-pegasus-41",
   title: "Stretch shell",
-  brand: { "id": "brand_nike", "name": "Nike" },
+  brand: { id: "brand_patagonia", name: "Patagonia" },
 
   categories: [
     { "id": "cat_shoes", "name": "hoodies" },
@@ -32,7 +32,11 @@ export const ProductData:ProductDetails[]=[
     
   ],
   features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?","Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque tenetur molestias amet quasi? Dolorum sapiente neque explicabo iusto, corrupti saepe? Quibusdam laboriosam amet cum culpa, impedit iste dolorem quia?"],
-
+ 
+  attributes: {
+    gender: "Women's",        
+   
+  },
 
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
@@ -52,7 +56,7 @@ export const ProductData:ProductDetails[]=[
   id: "prod_10002",
   handle: "nike-pegasus-41",
   title: "Fleece Hoodies men's",
-  brand: { "id": "brand_nike", "name": "Nike" },
+  brand: { id: "brand_columbia", name: "Columbia" },
 
   categories: [
     { "id": "cat_shoes", "name": "Shoes" },
@@ -67,6 +71,10 @@ export const ProductData:ProductDetails[]=[
     
     ],
     size: ["S", "M", "L", "XL"]
+  },
+  attributes: {
+    gender: "Men's",        
+   
   },
   reviews: 3.4,
   reviewsCount:10,
@@ -215,7 +223,7 @@ export const ProductData:ProductDetails[]=[
   id: "prod_10003",
   handle: "nike-pegasus-41",
   title: "Rain coat Waterproof GXT",
-  brand: { "id": "brand_nike", "name": "Nike" },
+  brand: { id: "brand_the_north_face", name: "The North Face" },
 
   categories: [
     { "id": "cat_shoes", "name": "Shoes" },
@@ -231,6 +239,10 @@ export const ProductData:ProductDetails[]=[
      
     ],
     size: ["S", "M", "L", "XL"]
+  },
+  attributes: {
+    gender: "Women's",        
+   
   },
   reviews: 5,
   reviewsCount:37,
@@ -398,7 +410,12 @@ export const ProductData:ProductDetails[]=[
       { value: "orange", label: "Orange", swatch: "#F97316" },
       { value: "green", label: "Green", swatch: "#5D9787" },
     ],
+    
     size: ["40", "41", "42", "43"]
+  },
+  attributes: {
+    gender: null,        
+   
   },
   reviews: 3.2,
   reviewsCount:10,
@@ -432,7 +449,7 @@ export const ProductData:ProductDetails[]=[
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "Nike Pegasus 41",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
@@ -556,7 +573,7 @@ export const ProductData:ProductDetails[]=[
   id: "prod_10005",
   handle: "nike-pegasus-41",
   title: "Trekking poles",
-  brand: { "id": "brand_nike", "name": "Nike" },
+  brand: { "id": "brand_black_diamond", "name": "Black Diamond" },
 
   categories: [
     { "id": "cat_shoes", "name": "Shoes" },
@@ -571,6 +588,10 @@ export const ProductData:ProductDetails[]=[
       { value: "orange", label: "Orange", swatch: "#F97316" },
     ],
     size: ["S/M", "M/L"]
+  },
+  attributes: {
+    gender: null,        
+   
   },
   reviews: 3.6,
   reviewsCount:10,
@@ -715,7 +736,7 @@ techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
   id: "prod_10006",
   handle: "nike-pegasus-41",
   title: "HeadLamps",
-  brand: { "id": "brand_nike", "name": "Nike" },
+  brand: { "id": "brand_black_diamond", "name": "Black Diamond" },
 
   categories: [
     { "id": "cat_shoes", "name": "Shoes" },
@@ -730,6 +751,10 @@ techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
       { value: "blue", label: "Blue", swatch: "#F97316" },
     ],
     size: null,
+  },
+  attributes: {
+    gender: null,        
+   
   },
   reviews: 5,
   reviewsCount:4,

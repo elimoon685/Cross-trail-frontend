@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cross-trail-frontend.vercel.app/"), 
   title: {
     default: "CrossTrail – Hiking, Events & Outdoor Gear",
-    template: "%s | CrossTrail",
+    template: "%s - CrossTrail",
   },
 
   description:

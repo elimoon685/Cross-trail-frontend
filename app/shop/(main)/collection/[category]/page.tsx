@@ -12,12 +12,13 @@ type PageProps = {
   ): Promise<Metadata> {
     const {category} = await params
   
-    // humanize slug：hoodies → Hoodies
+  
     const categoryTitle =
       category.charAt(0).toUpperCase() + category.slice(1);
   
     return {
-      title: categoryTitle,
+      title:categoryTitle,
+
       description: `Explore ${categoryTitle} collection including performance apparel and gear for outdoor activities.`,
     };
   }
