@@ -10,7 +10,7 @@ type Props={
 }
 const ShoppingCartSider = ({toggle}:Props) => {
 
-  const { shoppingCart, removeCart, count, totalPrice} = useCart()
+  const { shoppingCart, removeCart, count, totalPrice, increaseQuantity, decreaseQuantity} = useCart()
 
   return (
 
@@ -34,9 +34,11 @@ const ShoppingCartSider = ({toggle}:Props) => {
               </Link>
               <span>{item.color} / {item.size}</span>
               <div className="flex items-center w-30 h-7 border-2 border-gray-300">
-                <span className="text-xl  flex-1 flex justify-center border-r-2 border-gray-300">-</span>
+                <button className="text-xl  flex-1 flex justify-center border-r-2 border-gray-300 cursor-pointer" 
+                onClick={()=>decreaseQuantity(item.Id)}>-</button>
                 <span className="flex-1 flex justify-center">{item.quantity}</span>
-                <span className="text-xl  flex-1 flex justify-center border-l-2 border-gray-300">+</span>
+                <button className="text-xl  flex-1 flex justify-center border-l-2 border-gray-300 cursor-pointer" 
+                onClick={()=>increaseQuantity(item.Id)}>+</button>
               </div>
             </div>
             </div>
@@ -61,8 +63,8 @@ const ShoppingCartSider = ({toggle}:Props) => {
     {shoppingCart.length>0 && 
       <div className="flex flex-col px-3 mb-5 gap-2">
       <div className="flex justify-between">
-        <span className="text-xl">Subtotal items: {count}</span>
-        <span className="text-xl">Total: ${totalPrice}</span>
+        <span className="text-xl flex items-center gap-1">Subtotal items:<span className="font-bold text-2xl">{count}</span></span>
+        <span className="text-xl flex items-center gap-1">Total:<span className="font-bold text-2xl">${totalPrice}</span></span>
       </div>
       <button className="bg-[#5D9787] px-3 py-3 text-2xl text-white font-bold cursor-pointer">Check out</button>
       </div>

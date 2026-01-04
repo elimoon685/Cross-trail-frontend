@@ -8,6 +8,8 @@ type CTX={
     shoppingCart:ShoppingCart[];
     addCart:(product:ShoppingCart)=>void;
     removeCart:(Id:string)=>void;
+    increaseQuantity:(Id:string)=>void;
+    decreaseQuantity:(Id:string)=>void;
     count:number;
     totalPrice:number;
 }
@@ -43,11 +45,44 @@ export function ShoppingCartProvider({children}:{ children: React.ReactNode }){
     setCart(next);
     setShoppingCart(next)
     }
+
+    const increaseQuantity=(Id:string)=>{
+     const next=[...shoppingCart]
+     const existing=next.find(i=>i.Id===Id);
+
+     if(existing){
+        existing.quantity++;
+    }else{
+        return;
+    }
+    setCart(next);
+    setShoppingCart(next);
+    }
+
+    const decreaseQuantity=(Id:string)=>{
+        const next=[...shoppingCart]
+        const existing=next.find(i=>i.Id===Id);
+        if(existing){
+           if(existing.quantity===1){
+            const leftProduct=next.filter(i=>(i.Id!==Id));
+            setCart(leftProduct);
+            setShoppingCart(leftProduct);
+            return;
+           } else{
+            existing.quantity-=1
+           }
+       }else{
+           return;
+       }
+       setCart(next);
+       setShoppingCart(next);
+
+    }
     const count=useMemo(()=>shoppingCart.reduce((acc, i)=>acc+i.quantity, 0),[shoppingCart]);
 
     const totalPrice=useMemo(()=>shoppingCart.reduce((acc,i)=>acc+i.quantity*(i.comparedPrice? i.comparedPrice:i.price),0),[shoppingCart]);
 
-    const value=useMemo<CTX>(()=>({shoppingCart, addCart, removeCart, count, totalPrice}),[shoppingCart, count]);
+    const value=useMemo<CTX>(()=>({shoppingCart, addCart, removeCart, increaseQuantity, decreaseQuantity, count, totalPrice}),[shoppingCart, count]);
     
     
     return <ShoppingCartContext.Provider value={value}> {children}</ShoppingCartContext.Provider>
