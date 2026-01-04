@@ -37,7 +37,7 @@ export const ProductData:ProductDetails[]=[
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "stretch shell ",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
@@ -90,7 +90,7 @@ export const ProductData:ProductDetails[]=[
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "Fleece Hoodies men's",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
@@ -258,7 +258,7 @@ export const ProductData:ProductDetails[]=[
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "Rain coat Waterproof GXT",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
@@ -594,7 +594,7 @@ features:["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias atque
 techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "Trekking poles",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
@@ -747,7 +747,7 @@ techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
   techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
 
   seo: {
-    "title": "Nike Pegasus 41 | Running Shoe",
+    "title": "HeadLamps",
     "description": "Daily trainer with ...",
     "ogImage": "https://.../black-1.jpg"
   },
