@@ -18,9 +18,13 @@ const [selectedVariant, setSelectedVariant]=useState<Variant>(data.variants[0]);
 const [selectedColor, setSelectedColor]=useState<string >(data.variants[0].color);
 const [selectedSize, setSelectedSize]=useState<string | null>(data.variants[0].size);
 const [quantity, setQuantity]=useState<string>("1");
+const [openContent, setOpenContent]=useState<boolean>(false)
 const {addCart}=useCart();
 const sizeOrder = ["XS", "S", "M", "L", "XL", "XXL"];
+const PREVIEW_LEN = 200;
 
+const content = typeof data.content === "string" ? data.content : "";
+const isLong = content.length > PREVIEW_LEN;
 const uniqueSizes = Array.from(
   new Set(data.variants.map(v => v.size).filter((s):s is string =>!!s))
 ).sort(
@@ -112,8 +116,8 @@ const increaseQuantity=()=>{
 }
     return (
 
-        <div className="flex flex-col gap-5 grow justify-center mx-5">
-        <span className="text-3xl font-bold">{data.title}</span>
+        <div className="flex flex-col gap-5 grow mx-5 flex-1">
+        <h1 className="text-3xl font-bold">{data.title}</h1>
         {
             selectedVariant.compareAtAmount ? 
             <div className="flex gap-3">
@@ -146,6 +150,25 @@ const increaseQuantity=()=>{
             }
             { data.reviewsCount!==null && <span className="">{data.reviewsCount} Reviews</span>}
         </div>
+        
+          {content && (
+            <div className="flex flex-col gap-2">
+              <p className="text-sm leading-6 text-gray-700">
+                {openContent || !isLong ? content : `${content.slice(0, PREVIEW_LEN)}...`}
+              </p>
+      
+              {isLong && (
+                <button
+                  type="button"
+                  className="self-start text-sm font-semibold underline"
+                  onClick={() => setOpenContent((v) => !v)}
+                >
+                  {openContent ? "Show less" : "Show more"}
+                </button>
+              )}
+            </div>
+          )}
+
         {data.options.size !==null && 
         <div className="flex flex-col gap-2">
             <span className="flex items-center gap-3"><span className="text-xl font-bold">Size</span>  --{selectedSize}</span>

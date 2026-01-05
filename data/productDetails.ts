@@ -13,6 +13,12 @@ export const ProductData:ProductDetails[]=[
 
   tags: ["new", "running", "men"],
   descriptionHtml: "<p>...</p>",
+  content:`Designed for women who run in variable conditions, the Patagonia Stretch Shell
+is a lightweight running jacket that delivers comfort and protection without
+added bulk. Its flexible shell construction supports natural movement, making
+it suitable for daily training runs and active outdoor wear. Clean styling and
+a practical fit make it an easy choice for runners looking for a reliable,
+versatile outer layer.`,
   options: {
     color: [
       { value: "red", label: "Red", swatch: "#FF3B30"},
@@ -72,6 +78,12 @@ export const ProductData:ProductDetails[]=[
     ],
     size: ["S", "M", "L", "XL"]
   },
+  content:`Designed for everyday comfort and active wear, the Columbia Fleece Hoodie for men
+is a versatile layer suitable for running, warm-ups, and casual outdoor use.
+Made with soft fleece fabric, it provides reliable warmth without feeling heavy
+or restrictive. The relaxed fit allows natural movement, making it easy to wear
+on its own or as a mid-layer in cooler conditions. Clean styling and practical
+design make this hoodie a dependable choice for training sessions and daily wear.`,
   attributes: {
     gender: "Men's",        
    
@@ -244,6 +256,13 @@ export const ProductData:ProductDetails[]=[
     gender: "Women's",        
    
   },
+  content:`The North Face Rain Coat Waterproof GXT is a women’s waterproof running jacket
+designed for protection in wet and unpredictable conditions. Built with a
+durable waterproof shell, it helps keep rain and wind out while maintaining
+comfort during active movement. Suitable for running and light outdoor
+activities, this rain coat offers a practical balance between weather
+protection and everyday wearability. Clean lines and a functional fit make it
+a reliable outer layer for training and outdoor use in changing weather.`,
   reviews: 5,
   reviewsCount:37,
   mediaByColor: {
@@ -417,6 +436,13 @@ export const ProductData:ProductDetails[]=[
     gender: null,        
    
   },
+  content:`The Nike Hiking Shoes Men’s 626 are designed for durability and comfort on hiking
+trails and outdoor terrain. Built to provide stable support and reliable grip,
+these shoes help handle uneven surfaces while maintaining comfort during long
+walks and day hikes. Suitable for outdoor adventures and active use, the Men’s
+626 balance protection, traction, and everyday wearability. With a practical
+design and versatile color options, they are a dependable choice for men who
+need functional hiking footwear.`,
   reviews: 3.2,
   reviewsCount:10,
   mediaByColor: {
@@ -593,6 +619,13 @@ export const ProductData:ProductDetails[]=[
     gender: null,        
    
   },
+  content:`The Black Diamond Trekking Poles are designed to provide stability and support
+during hiking and trekking on varied terrain. Built for durability and balance,
+they help reduce strain on joints while improving confidence on ascents and
+descents. Suitable for day hikes and extended outdoor adventures, these trekking
+poles offer a practical combination of strength, comfort, and reliability. With
+a clean, functional design, they are a dependable companion for outdoor
+enthusiasts seeking added support on the trail.`,
   reviews: 3.6,
   reviewsCount:10,
   mediaByColor: {
@@ -756,6 +789,13 @@ techspecs:{weight:"xxxxx", material:"xxxxx", fit:"xxxxxxx"},
     gender: null,        
    
   },
+  content:`The Black Diamond Headlamp is a reliable lighting solution designed for outdoor
+activities in low-light conditions. Ideal for hiking, camping, and nighttime
+use, it provides hands-free illumination to support movement and visibility on
+the trail. Built with a practical and lightweight design, this headlamp offers
+consistent performance and comfort during extended wear. Suitable for outdoor
+enthusiasts who need dependable lighting, it is a versatile tool for a wide
+range of activities.`,
   reviews: 5,
   reviewsCount:4,
   mediaByColor: {

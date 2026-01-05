@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import ShopHeader from "@/component/shopHeader";
 import { ShoppingCartProvider} from "@/provider/shoppingCartProvider";
 export const metadata: Metadata = {
     title: {

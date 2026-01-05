@@ -78,6 +78,7 @@ export type ProductDetails = {
     categories: Category[];
     tags: string[];
     descriptionHtml: string;
+    content:string | null;
     options: {
         color: ColorOption[];
         size: string[]| null;
