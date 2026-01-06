@@ -14,3 +14,10 @@ export const apiShop=axios.create({
   },
 
 })
+
+export const apiPayment=axios.create({
+  baseURL:process.env.NEXT_PUBLIC_LASOPHY_PAYMENT_BACKEND_API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})

@@ -18,3 +18,9 @@ export interface FormValues{
     activityLink:string;
     screenShots:File[];
   };
+  export interface CreatePaymentFormData{
+    email: string,
+    firstName:string,
+    amountAud:number,
+
+}
