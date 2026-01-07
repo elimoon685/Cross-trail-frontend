@@ -13,7 +13,7 @@ const SiderHover = ({ data }: Props) => {
       <Link href={`/shop/collection/${categoryName}`}>
         {categoryName}
         </Link>
-        <ul className="absolute flex flex-col flex-wrap left-[100%] top-0  opacity-0 -translate-x-10 pointer-events-none group-hover:flex group-hover:flex-col group-hover:flex-wrap group-hover:translate-x-0 transform transition-transform duration-300 group-hover:opacity-100 group-hover:pointer-events-auto  bg-white gap-x-20 gap-y-10 w-[900px] h-[600px] px-10 py-10 z-50">
+        <ul className="absolute flex flex-col flex-wrap left-full top-0  opacity-0 -translate-x-10 pointer-events-none group-hover:flex group-hover:flex-col group-hover:flex-wrap group-hover:translate-x-0 transform transition-transform duration-300 group-hover:opacity-100 group-hover:pointer-events-auto  bg-white gap-x-20 gap-y-10 w-[900px] h-[600px] px-10 py-10 z-50">
 
           {items.map((item, idx) => (
             <HoverCol key={idx} data={item} />
