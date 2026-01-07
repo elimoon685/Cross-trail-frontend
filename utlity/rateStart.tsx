@@ -47,7 +47,7 @@ const RateStart = ({ data, count}: Props) => {
 
       </div>
       </div>
-      <span className=" font-bold self-center">{count} Reviews</span>
+      <span className="font-bold self-center">{count} Reviews</span>
     </section>
   }
 
