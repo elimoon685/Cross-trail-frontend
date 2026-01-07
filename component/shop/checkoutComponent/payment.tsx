@@ -27,7 +27,7 @@ const Payment=()=>{
 
     return (
 
-        <div className="flex flex-1 justify-center overflow-auto">
+        <div className="flex flex-1 justify-center">
             <Elements
           stripe={stripePromise}
           // deferred mount: no clientSecret yet
@@ -70,7 +70,7 @@ const Form = ({ name, setName, email, setEmail, amount }: FormDataPros) => {
   
     }
     return (
-      <form onSubmit={onSubmit} className="space-y-4 mt-10  px-3 py-3 max-w-[500px] shadow-lg drop-shadow-md shadow-black/30 w-full">
+      <form onSubmit={onSubmit} className="space-y-4 mt-10  px-3 py-3 max-w-[500px] shadow-lg drop-shadow-md shadow-black/30 w-full ">
         <div className="flex items-center mb-3">
           <button className="w-6 h-6 rounded-full bg-black text-gray-300 mr-3">1</button>
           <p className="text-2xl">Enter payment information</p>
