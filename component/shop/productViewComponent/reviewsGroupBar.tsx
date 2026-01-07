@@ -11,7 +11,7 @@ const ReviewsGroupBar=({data, total}:Props)=>{
     
     return (
 
-        <div className="flex flex-col gap-1 ">
+        <section className="flex flex-col gap-1 ">
             {
               arr.map((_, idx)=>(
               <div className="flex items-center gap-3" key={idx }>
@@ -38,7 +38,7 @@ const ReviewsGroupBar=({data, total}:Props)=>{
             }
             
 
-        </div>
+        </section>
     )
 }
 export default ReviewsGroupBar

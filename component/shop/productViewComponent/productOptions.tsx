@@ -116,7 +116,7 @@ const increaseQuantity=()=>{
 }
     return (
 
-        <div className="flex flex-col gap-5 grow mx-5 flex-1">
+        <section className="flex flex-col gap-5 grow mx-5 flex-1" aria-labelledby="product-title">
         <h1 className="text-3xl font-bold">{data.title}</h1>
         {
             selectedVariant.compareAtAmount ? 
@@ -152,7 +152,8 @@ const increaseQuantity=()=>{
         </div>
         
           {content && (
-            <div className="flex flex-col gap-2">
+            <section className="flex flex-col gap-2" aria-labelledby="product-summary">
+              <h2 id="product-summary" className="sr-only">Product summary</h2>
               <p className="text-sm leading-6 text-gray-700">
                 {openContent || !isLong ? content : `${content.slice(0, PREVIEW_LEN)}...`}
               </p>
@@ -166,12 +167,12 @@ const increaseQuantity=()=>{
                   {openContent ? "Show less" : "Show more"}
                 </button>
               )}
-            </div>
+            </section>
           )}
 
         {data.options.size !==null && 
-        <div className="flex flex-col gap-2">
-            <span className="flex items-center gap-3"><span className="text-xl font-bold">Size</span>  --{selectedSize}</span>
+        <fieldset className="flex flex-col gap-2">
+            <span className="flex items-center gap-3"><legend className="text-xl font-bold">Size</legend>  --{selectedSize}</span>
         <div className="flex gap-3">
             {
                 uniqueSizes.map((size, index)=>(
@@ -185,10 +186,10 @@ const increaseQuantity=()=>{
             }
 
         </div>
-        </div>
+        </fieldset>
         }
-        <div className="flex flex-col gap-2">
-            <span className="flex gap-3 items-center"><span className="text-xl font-bold">Color</span>--{selectedColor}</span>
+        <fieldset className="flex flex-col gap-2">
+            <span className="flex gap-3 items-center"><legend className="text-xl font-bold">Color</legend>--{selectedColor}</span>
         <div className="flex gap-3">
          {
           colorCode.map((c,index)=>{
@@ -207,9 +208,10 @@ const increaseQuantity=()=>{
 
          }
         </div>
-        </div>
+        </fieldset>
         
-        <div className="flex flex-col gap-3">
+        <section aria-labelledby="purchase"  className="flex flex-col gap-3">
+        <h2 id="purchase" className="sr-only">Purchase</h2>
          <span className="flex items-center gap-3"> <span className="flex font-bold text-xl">Quantity</span>stock {selectedVariant.stock}</span>
          <div className="flex grow gap-5">
          <div className="border-2 border-gray-300 flex justify-center self-start">
@@ -247,9 +249,9 @@ const increaseQuantity=()=>{
          <button className="bg-gray-300 grow text-xl text-white font-bold">Sold out</button>
 }
          </div>
-        </div>
+        </section>
         
-        </div>
+        </section>
 
     )
 }

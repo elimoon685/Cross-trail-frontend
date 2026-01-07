@@ -24,7 +24,7 @@ const RateStart = ({ data, count}: Props) => {
     </div>
   } else {
 
-    return <div className="flex flex-col self-center">
+    return <section className="flex flex-col self-center">
       <div className="flex gap-3">
       <span className=" text-3xl font-bold self-start">{data}</span>
       
@@ -48,7 +48,7 @@ const RateStart = ({ data, count}: Props) => {
       </div>
       </div>
       <span className=" font-bold self-center">{count} Reviews</span>
-    </div>
+    </section>
   }
 
 }

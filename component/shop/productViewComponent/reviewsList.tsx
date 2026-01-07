@@ -15,12 +15,12 @@ const ReviewsList = ({ data }: Props) => {
 
   return (
 
-    <div className="flex flex-col gap-10 mt-10">
+    <section className="flex flex-col gap-10 mt-10">
 
       {
         data.map((c, index) => (
 
-          <div key={index} className="flex flex-col gap-2">
+          <article key={index} className="flex flex-col gap-2">
             <div className="flex justify-between">
               <div className="flex gap-3">
                 <RxAvatar className="w-10 h-10 shrink-0" />
@@ -39,16 +39,8 @@ const ReviewsList = ({ data }: Props) => {
                   }else{
                     return <IoStarOutline key={index} className="text-amber-500 w-5 h-5" />
                   }
-
-
-
                  })
-
-
-
                }
-                
-
               </div>
 
               <span className="font-bold text-[18px]">{c.title}</span>
@@ -56,7 +48,7 @@ const ReviewsList = ({ data }: Props) => {
             </div>
             <span>{c.date}</span>
             </div>
-           <span>{c.content}</span>
+           <p>{c.content}</p>
 
            <div className="flex self-end items-center gap-3">
             <span>Was this helpful?</span>
@@ -64,13 +56,13 @@ const ReviewsList = ({ data }: Props) => {
             <span className="flex items-center gap-1"><IoMdThumbsUp />{c.helpful}</span>
             <span className="flex items-center gap-1"><IoMdThumbsDown/>{c.dislike}</span>
            </div>
-          </div>
+          </article>
         ))
        
 
       }
 
-    </div>
+    </section>
 
   )
 }
