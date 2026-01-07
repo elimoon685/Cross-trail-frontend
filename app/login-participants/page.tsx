@@ -1,5 +1,13 @@
 import LoginCard from "@/component/useClientComponent/loginCard"
-import Image from "next/image"
+import Image from "next/image";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    
+       title: "Login - Participants",
+       description: "Login for participants",
+       
+     };
+   
 const Login=()=>{
 
 return (

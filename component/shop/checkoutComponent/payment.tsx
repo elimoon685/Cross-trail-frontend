@@ -28,7 +28,7 @@ const Payment=()=>{
     return (
 
         <div className="flex flex-1 justify-center">
-            <Elements
+            <Elements       
           stripe={stripePromise}
           // deferred mount: no clientSecret yet
           options={{ mode: "payment", amount: Math.max(1, totalPrice * 100), currency: "aud", appearance: stripeAppearance }}
@@ -102,7 +102,7 @@ const Form = ({ name, setName, email, setEmail, amount }: FormDataPros) => {
         <CheckoutProductList/>
         </div>
         <button disabled={!stripe || loading} 
-                className="px-4 py-2 rounded bg-[#5D9787] text-white w-full text-2xl font-bold">
+                className="px-4 py-2 rounded bg-[#5D9787] text-white w-full text-2xl font-bold cursor-pointer">
           Pay now 
         </button>
       </form>

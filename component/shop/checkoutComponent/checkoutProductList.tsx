@@ -39,7 +39,7 @@ const CheckoutProductList = () => {
 
 
 
-    <div className="flex flex-col max-w-120 w-full px-3 py-3 self-start gap-5 mt-10 lg:px-7 lg:py-7 ">
+    <div className="flex flex-col max-w-120 w-full px-3 py-3 self-start gap-5 mt-10 lg:px-7 lg:py-7 lg:sticky lg:top-0">
 
       {
         !isLag && !openList && (
@@ -149,7 +149,7 @@ const CheckoutProductList = () => {
       </div>
       <div className="flex justify-between gap-3">
         <input
-          className="border-2 border-gray-300 px-3 py-2 max-w-80 w-full rounded-lg"
+          className="border-2 border-gray-300 px-3 py-2 max-w-80 w-full rounded-lg bg-white"
           placeholder="Discount code or gift card"
         />
         <button className="bg-[#5D9787] rounded-lg px-3 py-2 text-white font-bold">Apply</button>

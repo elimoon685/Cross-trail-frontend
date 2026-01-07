@@ -229,7 +229,7 @@ const increaseQuantity=()=>{
           >+</button>
          </div>{
             selectedVariant.stock>0 ?
-         <button className="bg-[#FF3B30] grow text-xl text-white font-bold"
+         <button className="bg-[#FF3B30] grow text-xl text-white font-bold cursor-pointer"
          onClick={()=>addCart({
             Id:selectedVariant.id,
             productId:data.id,

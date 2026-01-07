@@ -28,8 +28,9 @@ const Header=()=>{
             </div>
             <h1 className="text-2xl">CrossTrail</h1>
          </div>
-         <div className="relative inline-block group">
-         <button className="rounded-2xl px-4 py-1 border border-[#345975] hover:bg-[#345975] hover:text-white cursor-pointer" onClick={()=>setOpenLogin(prev=>!prev)}>Login</button>
+         <div className="relative inline-block group" ref={loginRef}>
+         <button className="rounded-2xl px-4 py-1 border border-[#345975] hover:bg-[#345975] hover:text-white cursor-pointer" 
+         onClick={()=>setOpenLogin(prev=>!prev)}>Login</button>
          <div
     className={`
       fixed right-0 top-15
@@ -37,7 +38,7 @@ const Header=()=>{
     transform transition-transform
     w-50  rounded border bg-white shadow p-1 
     z-999
-    `} ref={loginRef}
+    `} 
   >
     <div className="flex flex-col">
         <Link href={`/login-admin`}>
