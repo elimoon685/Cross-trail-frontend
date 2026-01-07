@@ -49,7 +49,7 @@ const CheckoutProductList = () => {
               <div className="flex relative h-20 w-20">
 
                 {
-                  shoppingCart.length > 1 ?
+                  shoppingCart.length >= 2 &&
                     (
                       <>
                         <div className="absolute inset-0 z-10">
@@ -67,16 +67,19 @@ const CheckoutProductList = () => {
                         </div>
                       </>
 
-                    ) :
+                    ) 
 
-                    (
-                      <div className="absolute inset-0 z-10">
-                        <div className="relative flex h-20 w-20 p-1 border border-gray-300 overflow-hidden rounded-xl">
-                          <Image alt={shoppingCart[0].title} src={shoppingCart[0].image} fill className="object-cover z-50">
-                          </Image>
-                        </div>
+                    
+                }
+                {  shoppingCart.length ===1 && 
+                  (
+                    <div className="absolute inset-0 z-10">
+                      <div className="relative flex h-20 w-20 p-1 border border-gray-300 overflow-hidden rounded-xl">
+                        <Image alt={shoppingCart[0].title} src={shoppingCart[0].image} fill className="object-cover z-50">
+                        </Image>
                       </div>
-                    )
+                    </div>
+                  )
                 }
 
               </div>
