@@ -19,7 +19,7 @@ overlay management, complex layouts, and cross-component state coordination.
 
   ![Collection Page](./screenShots/collectionPage.png)
   ![Shopping Cart](./screenShots/shoppingCart.png)
-  ！[Checkout Page](./screenShots/checkoutPage.png)
+  ![Checkout Page](./screenShots/checkoutPage.png)
 </details>
 
 ## Why This Project
